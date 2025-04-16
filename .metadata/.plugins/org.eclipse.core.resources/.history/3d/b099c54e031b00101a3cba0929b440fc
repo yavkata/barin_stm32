@@ -105,16 +105,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-      // Place the code here to set the pins low
-          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
-          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_RESET);
-          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_RESET);
       // ADDED CODE START
             // Toggling PB12, PB13, PB14
-          //  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_12);
-           // HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_13);
-          //  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
-          //  HAL_Delay(1000); // 1-second delay
+            HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_12);
+            HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_13);
+            HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
+            HAL_Delay(1000); // 1-second delay
             // ADDED CODE END
     /* USER CODE END WHILE */
 
