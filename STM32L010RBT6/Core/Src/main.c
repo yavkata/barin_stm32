@@ -21,7 +21,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <string.h>
+#include <stdio.h>
+#include <stdbool.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -47,7 +49,9 @@ I2C_HandleTypeDef hi2c1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-
+uint8_t rxData;
+char pongMessage[] = "Pong\r\n";
+volatile uint8_t uart_flag = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -56,6 +60,7 @@ static void MX_GPIO_Init(void);
 static void MX_ADC_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_USART2_UART_Init(void);
+static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -97,28 +102,55 @@ int main(void)
   MX_ADC_Init();
   MX_I2C1_Init();
   MX_USART2_UART_Init();
+
+  /* Initialize interrupts */
+  MX_NVIC_Init();
+
   /* USER CODE BEGIN 2 */
 
+  // Start receiving in interrupt mode
+    HAL_UART_Receive_IT(&huart2, &rxData, 1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
       // Place the code here to set the pins low
-          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
-          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_RESET);
-          HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_RESET);
+      //    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+       //   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_13, GPIO_PIN_RESET);
+      //    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_RESET);
       // ADDED CODE START
             // Toggling PB12, PB13, PB14
-          //  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_12);
-           // HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_13);
-          //  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
-          //  HAL_Delay(1000); // 1-second delay
+          // HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_12);
+         //   HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_13);
+         //   HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
+         //   HAL_Delay(1000); // 1-second delay
+          /* Send a message over UART */
+           //  char *message = "Hello\r\n";
+           //  HAL_UART_Transmit(&huart2, (uint8_t *)message, strlen(message), HAL_MAX_DELAY);
+
+             /* Delay for 1 second */
+           //  HAL_Delay(1000);
+
             // ADDED CODE END
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  // Toggle a heartbeat LED to show the MCU is alive (optional)
+	   HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
+	   HAL_Delay(1000);  // 1-second heartbeat
+
+	   // UART sanity check message every 3 seconds
+	   static uint32_t lastTick = 0;
+	   if (HAL_GetTick() - lastTick >= 3000)
+	   {
+	     char testMsg[] = "UART test\r\n";
+	     HAL_UART_Transmit(&huart2, (uint8_t*)testMsg, strlen(testMsg), HAL_MAX_DELAY);
+	     lastTick = HAL_GetTick();
+	   }
+
   }
   /* USER CODE END 3 */
 }
@@ -170,6 +202,17 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief NVIC Configuration.
+  * @retval None
+  */
+static void MX_NVIC_Init(void)
+{
+  /* USART2_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(USART2_IRQn, 2, 0);
+  HAL_NVIC_EnableIRQ(USART2_IRQn);
 }
 
 /**
@@ -344,8 +387,10 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14
-                          |GPIO_PIN_3|GPIO_PIN_4, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_13|GPIO_PIN_3|GPIO_PIN_4, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12|GPIO_PIN_14, GPIO_PIN_SET);
 
   /*Configure GPIO pins : PA0 PA1 */
   GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1;
@@ -386,13 +431,34 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Alternate = GPIO_AF2_TIM2;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI4_15_IRQn, 1, 0);
+  HAL_NVIC_EnableIRQ(EXTI4_15_IRQn);
+
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
   /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+  if (huart->Instance == USART2)
+  {
+    // Echo received character
+    HAL_UART_Transmit(&huart2, &rxData, 1, HAL_MAX_DELAY);
 
+    // Check for 'p' or 'P'
+    if (rxData == 'p' || rxData == 'P')
+    {
+      HAL_UART_Transmit(&huart2, (uint8_t*)pongMessage, strlen(pongMessage), HAL_MAX_DELAY);
+      HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_12); // Toggle ping LED
+    }
+
+    // Continue listening
+    HAL_UART_Receive_IT(&huart2, &rxData, 1);
+  }
+}
 /* USER CODE END 4 */
 
 /**
