@@ -574,3 +574,68 @@
 2025-04-23 13:58:08,599 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 2276mS.
 2025-04-23 13:58:08,600 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
 2025-04-23 13:58:08,601 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-23 14:42:44,713 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 676703168 Bytes (1021313024)
+2025-04-23 14:42:46,568 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 705799120 Bytes (1021313024)
+2025-04-23 14:42:46,776 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: ADC
+2025-04-23 14:42:46,778 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-23 14:42:46,778 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-23 14:42:46,779 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-23 14:42:46,779 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-04-23 14:42:46,779 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-23 14:42:46,780 [INFO] CodeGenerator:882 - code generatio: config db path: /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.common.mx_6.14.1.202504091515//db/
+2025-04-23 14:42:47,011 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/MXTmpFiles/license.tmp_save
+2025-04-23 14:42:47,399 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/MXTmpFiles/license.tmp
+2025-04-23 14:42:47,496 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/MXTmpFiles/gpio.tmp_save
+2025-04-23 14:42:47,645 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/MXTmpFiles/gpio.tmp
+2025-04-23 14:42:47,717 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Src/stm32l0xx_it.c_save
+2025-04-23 14:42:48,163 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Src/stm32l0xx_it.c
+2025-04-23 14:42:48,165 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Inc/stm32l0xx_it.h_save
+2025-04-23 14:42:48,320 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Inc/stm32l0xx_it.h
+2025-04-23 14:42:48,328 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Src/stm32l0xx_hal_msp.c_save
+2025-04-23 14:42:48,651 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Src/stm32l0xx_hal_msp.c
+2025-04-23 14:42:48,655 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/MXTmpFiles/system.tmp_save
+2025-04-23 14:42:48,784 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/MXTmpFiles/system.tmp
+2025-04-23 14:42:48,791 [INFO] CodeEngine:319 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Inc/stm32l0xx_hal_conf.h_save
+2025-04-23 14:42:48,908 [INFO] CodeEngine:343 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Inc/stm32l0xx_hal_conf.h
+2025-04-23 14:42:48,931 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Inc/main.h_save
+2025-04-23 14:42:49,097 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Inc/main.h
+2025-04-23 14:42:49,099 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Src/main.c_save
+2025-04-23 14:42:49,385 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Src/main.c
+2025-04-23 14:42:49,810 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 46mS.
+2025-04-23 14:42:49,813 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2025-04-23 14:42:49,963 [INFO] ConfigFileManager:1590 - The Die is : DIE447
+2025-04-23 14:42:51,644 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1831mS.
+2025-04-23 14:42:51,645 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2025-04-23 14:42:51,646 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-23 14:50:03,603 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 333851624 Bytes (843055104)
+2025-04-23 14:50:03,788 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: ADC
+2025-04-23 14:50:03,789 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-23 14:50:03,789 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-23 14:50:03,789 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-23 14:50:03,790 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-04-23 14:50:03,790 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-23 14:50:03,790 [INFO] CodeGenerator:882 - code generatio: config db path: /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.common.mx_6.14.1.202504091515//db/
+2025-04-23 14:50:03,948 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/MXTmpFiles/license.tmp_save
+2025-04-23 14:50:04,085 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/MXTmpFiles/license.tmp
+2025-04-23 14:50:04,105 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/MXTmpFiles/gpio.tmp_save
+2025-04-23 14:50:04,224 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/MXTmpFiles/gpio.tmp
+2025-04-23 14:50:04,333 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Src/stm32l0xx_it.c_save
+2025-04-23 14:50:04,480 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Src/stm32l0xx_it.c
+2025-04-23 14:50:04,484 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Inc/stm32l0xx_it.h_save
+2025-04-23 14:50:04,616 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Inc/stm32l0xx_it.h
+2025-04-23 14:50:04,622 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Src/stm32l0xx_hal_msp.c_save
+2025-04-23 14:50:04,813 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Src/stm32l0xx_hal_msp.c
+2025-04-23 14:50:04,815 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/MXTmpFiles/system.tmp_save
+2025-04-23 14:50:04,940 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/MXTmpFiles/system.tmp
+2025-04-23 14:50:04,947 [INFO] CodeEngine:319 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Inc/stm32l0xx_hal_conf.h_save
+2025-04-23 14:50:05,074 [INFO] CodeEngine:343 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Inc/stm32l0xx_hal_conf.h
+2025-04-23 14:50:05,092 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Inc/main.h_save
+2025-04-23 14:50:05,212 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Inc/main.h
+2025-04-23 14:50:05,215 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Src/main.c_save
+2025-04-23 14:50:05,374 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_Vref/Core/Src/main.c
+2025-04-23 14:50:05,720 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 39mS.
+2025-04-23 14:50:05,724 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2025-04-23 14:50:05,868 [INFO] ConfigFileManager:1590 - The Die is : DIE447
+2025-04-23 14:50:07,177 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1453mS.
+2025-04-23 14:50:07,179 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 2mS.
+2025-04-23 14:50:07,181 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.

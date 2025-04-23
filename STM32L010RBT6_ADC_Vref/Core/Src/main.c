@@ -6,7 +6,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
-
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -16,9 +15,9 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define VREFINT_CAL_ADDR ((uint16_t*) ((uint32_t) 0x1FF80078))
-#define VREFINT_CAL  (*VREFINT_CAL_ADDR)
-#define VREFINT_CAL_VOLTAGE 3.0f
+#define VREFINT_CAL_VOLTAGE 3.0f  // Nominal VREF+ voltage
 #define ADC_RESOLUTION 4095.0f
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -31,9 +30,8 @@ ADC_HandleTypeDef hadc;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-char msg[128];
+char msg[64];
 uint16_t adc_raw;
-float vref_voltage = 3.0f; // Default fallback
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -46,7 +44,6 @@ static void MX_USART2_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-ADC_ChannelConfTypeDef sConfig;
 /* USER CODE END 0 */
 
 /**
@@ -78,44 +75,30 @@ int main(void)
   MX_ADC_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  HAL_ADCEx_EnableVREFINT();
+  HAL_ADCEx_EnableVREFINT();  // Enable internal reference channel
+  HAL_ADCEx_Calibration_Start(&hadc, ADC_SINGLE_ENDED);  // Calibrate ADC
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
     {
-	  ADC_ChannelConfTypeDef sConfig = {0};
+      ADC_ChannelConfTypeDef sConfig = {0};
+      sConfig.Channel = ADC_CHANNEL_VREFINT;
+      sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
+      HAL_ADC_ConfigChannel(&hadc, &sConfig);
 
-	      // Measure VREFINT
-	      sConfig.Channel = ADC_CHANNEL_VREFINT;
-	      sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
-	      HAL_ADC_ConfigChannel(&hadc, &sConfig);
+      HAL_ADC_Start(&hadc);
+      HAL_ADC_PollForConversion(&hadc, HAL_MAX_DELAY);
+      adc_raw = HAL_ADC_GetValue(&hadc);
+      HAL_ADC_Stop(&hadc);
 
-	      HAL_ADC_Start(&hadc);
-	      HAL_ADC_PollForConversion(&hadc, HAL_MAX_DELAY);
-	      adc_raw = HAL_ADC_GetValue(&hadc);
-	      HAL_ADC_Stop(&hadc);
+      float vref = VREFINT_CAL_VOLTAGE * ((float)(*VREFINT_CAL_ADDR) / (float)adc_raw);
+      int len = snprintf(msg, sizeof(msg), "VREFINT => VDD: %.3f V\r\n", vref);
+      HAL_UART_Transmit(&huart2, (uint8_t*)msg, len, HAL_MAX_DELAY);
 
-	      vref_voltage = VREFINT_CAL_VOLTAGE * ((float)VREFINT_CAL / (float)adc_raw);
-	      int len = snprintf(msg, sizeof(msg), "VREFINT voltage: %.3f V\r\n", vref_voltage);
-	      HAL_UART_Transmit(&huart2, (uint8_t*)msg, len, HAL_MAX_DELAY);
-
-	      // Measure ADC_IN6 (PA6)
-	      sConfig.Channel = ADC_CHANNEL_6;
-	      sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
-	      HAL_ADC_ConfigChannel(&hadc, &sConfig);
-
-	      HAL_ADC_Start(&hadc);
-	      HAL_ADC_PollForConversion(&hadc, HAL_MAX_DELAY);
-	      adc_raw = HAL_ADC_GetValue(&hadc);
-	      HAL_ADC_Stop(&hadc);
-
-	      float voltage_in6 = vref_voltage * ((float)adc_raw / ADC_RESOLUTION);
-	      len = snprintf(msg, sizeof(msg), "ADC_IN6 voltage: %.3f V\r\n", voltage_in6);
-	      HAL_UART_Transmit(&huart2, (uint8_t*)msg, len, HAL_MAX_DELAY);
-
-	      HAL_Delay(1000);
+      HAL_Delay(1000);
     }
     /* USER CODE END WHILE */
 
@@ -213,15 +196,6 @@ static void MX_ADC_Init(void)
 
   /** Configure for the selected ADC regular channel to be converted.
   */
-  sConfig.Channel = ADC_CHANNEL_6;
-  sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
-  if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  /** Configure for the selected ADC regular channel to be converted.
-  */
   sConfig.Channel = ADC_CHANNEL_VREFINT;
   sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
   if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
@@ -229,31 +203,6 @@ static void MX_ADC_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN ADC_Init 2 */
-  // Enable internal channels like VREFINT
-    HAL_ADCEx_EnableVREFINT();
-
-    // Calibrate the ADC
-    if (HAL_ADCEx_Calibration_Start(&hadc, ADC_SINGLE_ENDED) != HAL_OK)
-    {
-      Error_Handler();
-    }
-
-    // First configure VREFINT channel
-    sConfig.Channel = ADC_CHANNEL_VREFINT;
-    sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
-
-    if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
-    {
-      Error_Handler();
-    }
-    // Then configure ADC_IN6 (e.g., PA6)
-      sConfig.Channel = ADC_CHANNEL_6;  // PA6
-      sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
-
-      if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
-      {
-        Error_Handler();
-      }
   /* USER CODE END ADC_Init 2 */
 
 }
