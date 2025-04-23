@@ -639,3 +639,636 @@
 2025-04-23 14:50:07,177 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1453mS.
 2025-04-23 14:50:07,179 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 2mS.
 2025-04-23 14:50:07,181 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-23 15:25:29,971 [INFO] MainUpdater:2872 - connection check result : 10
+2025-04-23 15:25:30,313 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
+2025-04-23 15:25:30,328 [INFO] MultiScanPanel:200 - Auto-refresh data requested => check proxy status ongoing
+2025-04-23 15:25:30,332 [INFO] FinderPluginLoader:95 - Searching for filters in installed packs
+2025-04-23 15:25:33,177 [INFO] LoadUrlFilesThread:185 - End of LoadServerUrlFiles without Thread
+2025-04-23 15:25:33,284 [INFO] DetailPanel:341 - Set advertising image to /home/barin/STM32Cube/Repository//en.prom-stm32u3-mcu-finder.jpg
+2025-04-23 15:27:19,521 [INFO] MainUpdater:2872 - connection check result : 10
+2025-04-23 15:27:19,522 [INFO] MainUpdater:2872 - connection check result : 10
+2025-04-23 15:27:19,572 [INFO] MicroXplorer:468 - Change Database Path : 
+2025-04-23 15:27:19,573 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.141
+2025-04-23 15:27:19,602 [ERROR] ProjectManagerView:395 - 
+java.lang.NullPointerException: Cannot invoke "javax.swing.JTextField.getText()" because the return value of "java.util.List.get(int)" is null
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab$9.caretUpdate(ProjectChoiceTab.java:2678) ~[filemanager.jar:?]
+	at javax.swing.text.JTextComponent.fireCaretUpdate(JTextComponent.java:408) ~[?:?]
+	at javax.swing.text.JTextComponent$MutableCaretEvent.fire(JTextComponent.java:4484) ~[?:?]
+	at javax.swing.text.JTextComponent$MutableCaretEvent.stateChanged(JTextComponent.java:4506) ~[?:?]
+	at javax.swing.text.DefaultCaret.fireStateChanged(DefaultCaret.java:857) ~[?:?]
+	at javax.swing.text.DefaultCaret.changeCaretPosition(DefaultCaret.java:1343) ~[?:?]
+	at javax.swing.text.DefaultCaret.handleSetDot(DefaultCaret.java:1242) ~[?:?]
+	at javax.swing.text.DefaultCaret.setDot(DefaultCaret.java:1223) ~[?:?]
+	at javax.swing.text.DefaultCaret$Handler.insertUpdate(DefaultCaret.java:1819) ~[?:?]
+	at javax.swing.text.AbstractDocument.fireInsertUpdate(AbstractDocument.java:227) ~[?:?]
+	at javax.swing.text.AbstractDocument.handleInsertString(AbstractDocument.java:781) ~[?:?]
+	at javax.swing.text.AbstractDocument.insertString(AbstractDocument.java:740) ~[?:?]
+	at javax.swing.text.PlainDocument.insertString(PlainDocument.java:131) ~[?:?]
+	at javax.swing.text.AbstractDocument.replace(AbstractDocument.java:699) ~[?:?]
+	at javax.swing.text.JTextComponent.setText(JTextComponent.java:1725) ~[?:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.createHeapStackFields(ProjectChoiceTab.java:979) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.buildLinkSettingsPanel(ProjectChoiceTab.java:3766) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.defineWindowsFields(ProjectChoiceTab.java:1962) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.updateSettings(ProjectChoiceTab.java:555) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectSettingsPanel.UpdateDialog(ProjectSettingsPanel.java:245) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.ProjectManagerView.propertyChange(ProjectManagerView.java:392) ~[filemanager.jar:?]
+	at java.beans.PropertyChangeSupport.fire(PropertyChangeSupport.java:343) ~[?:?]
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:335) ~[?:?]
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:268) ~[?:?]
+	at com.st.microxplorer.util.MXPropertyChangeSupport.firePropertyChange(MXPropertyChangeSupport.java:54) ~[STM32CubeMX.jar:?]
+	at com.st.microxplorer.mxsystem.MxSystem.closeConfig(MxSystem.java:899) ~[STM32CubeMX.jar:?]
+	at com.st.microxplorer.maingui.MainPanel.closeConfig(MainPanel.java:789) ~[STM32CubeMX.jar:?]
+	at com.st.microxplorer.plugins.filemanager.engine.OpenFileManager.loadConfigurationFile(OpenFileManager.java:287) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.filemanager.engine.MainFileManager.userLoadConfig(MainFileManager.java:341) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.filemanager.engine.MainFileManager.userLoadConfig(MainFileManager.java:319) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.filemanager.FileManagerView.getSpecificTask(FileManagerView.java:246) ~[filemanager.jar:?]
+	at com.st.stm32cube.common.mx.editor.CubeMxEditor.getMxTabbedPaneInstance(CubeMxEditor.java:1198) ~[com.st.stm32cube.common.mx_6.14.1.202504091515/:?]
+	at com.st.stm32cube.common.mx.editor.CubeMxEditor$12$1.createSwingComponent(CubeMxEditor.java:1068) ~[com.st.stm32cube.common.mx_6.14.1.202504091515/:?]
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.EmbeddedSwingComposite.doComponentCreation(EmbeddedSwingComposite.java:492) ~[com.st.stm32cube.common.mx.oss_6.14.1.202504091515/:?]
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.EmbeddedSwingComposite$4.run(EmbeddedSwingComposite.java:291) ~[com.st.stm32cube.common.mx.oss_6.14.1.202504091515/:?]
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.AwtEnvironment$2.run(AwtEnvironment.java:166) ~[com.st.stm32cube.common.mx.oss_6.14.1.202504091515/:?]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:400) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) ~[?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:742) ~[?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) ~[?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) ~[?:?]
+2025-04-23 15:27:19,610 [WARN] ThirdParty:871 - waiting for thirdparty lock release [close project]
+2025-04-23 15:27:19,610 [INFO] ThirdParty:873 - entering critical section [close project]
+2025-04-23 15:27:19,610 [INFO] ThirdParty:883 - exiting critical section [close project]
+2025-04-23 15:27:19,616 [INFO] PinOutPanel:1589 - setPackage(No Configuration,No Configuration)
+2025-04-23 15:27:19,636 [INFO] UtilMem:75 - Begin LoadConfig() Used Memory: 484968448 Bytes (845152256)
+2025-04-23 15:27:19,641 [INFO] MicroXplorer:468 - Change Database Path : 
+2025-04-23 15:27:19,641 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.141
+2025-04-23 15:27:19,641 [INFO] OpenFileManager:354 - Change cursor
+2025-04-23 15:27:19,708 [INFO] RulesReader:64 - Compatibility file has been processed (302 Rules)
+2025-04-23 15:27:19,718 [INFO] Mcu:2011 - Initializing MCU STM32L010RBTx STM32L010RBTx STM32L010RBT6
+2025-04-23 15:27:21,018 [INFO] Context:756 - Trying to add GPIOservice into a context  which must be forbidden
+2025-04-23 15:27:21,543 [INFO] ImportTextPane:218 - (OptionalMessage_ERROR) Unable to find key (Mcu.ThirdPartyNb) in loaded IOC file
+2025-04-23 15:27:21,545 [INFO] ImportTextPane:218 - (OptionalMessage_ERROR) Unable to find key (Mcu.PinsNb) in loaded IOC file
+2025-04-23 15:27:21,548 [INFO] ImportTextPane:218 - (OptionalMessage_ERROR) Pin0 (VP_RIF_VS_RIF1) cannot be retrieved for this MCU
+2025-04-23 15:27:21,548 [INFO] ImportTextPane:218 - (OptionalMessage_ERROR) Unable to find key (Mcu.IPNb) in loaded IOC file
+2025-04-23 15:27:22,274 [INFO] RtosManager:558 - Registered RTOS mode: class=CMSIS, group=RTOS, mode=CMSIS_V1, owner=FREERTOS
+2025-04-23 15:27:22,274 [INFO] RtosManager:558 - Registered RTOS mode: class=CMSIS, group=RTOS2, mode=CMSIS_V2, owner=FREERTOS
+2025-04-23 15:27:22,276 [INFO] RtosManager:558 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V1, owner=FREERTOS
+2025-04-23 15:27:22,277 [INFO] RtosManager:558 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V2, owner=FREERTOS
+2025-04-23 15:27:22,277 [WARN] ModelIntegratedComponent:184 - Missing modes for component STMicroelectronics:FreeRTOS:0.0.1:STMicroelectronics:RTOS:FreeRTOS:Core:::10.2.0:
+2025-04-23 15:27:22,334 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,336 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,337 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,337 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,337 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,337 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,337 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,337 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,337 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,338 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,343 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,343 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,343 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,343 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,343 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,346 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,346 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,346 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,346 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,346 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,346 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,347 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,347 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,347 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,347 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,347 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,347 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,347 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,347 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,347 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,347 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,347 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,348 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,348 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,348 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-04-23 15:27:22,348 [WARN] ModelPack:524 - Component already loaded: STMicroelectronics:HAL Drivers:0.0.0:STMicroelectronics:Device:STMicro_Driver:XSPI:HAL::0.0.1:HAL_XSPI
+2025-04-23 15:27:22,431 [INFO] ThirdPartyModel:298 - Start build external matchings
+2025-04-23 15:27:23,621 [INFO] ThirdPartyModel:316 - End build external matchings
+2025-04-23 15:27:23,767 [INFO] UtilMem:75 - End LoadConfig() Used Memory: 482356352 Bytes (845152256)
+2025-04-23 15:27:23,790 [WARN] ThirdParty:833 - waiting for thirdparty lock release [change project]
+2025-04-23 15:27:23,791 [INFO] ThirdParty:835 - entering critical section [change project]
+2025-04-23 15:27:23,791 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USBPD 4.1
+2025-04-23 15:27:23,791 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7 3.3.0
+2025-04-23 15:27:23,791 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC9 1.0.0
+2025-04-23 15:27:23,791 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 2.0.0
+2025-04-23 15:27:23,791 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENVWB1 1.4.0
+2025-04-23 15:27:23,792 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F4 1.1.0
+2025-04-23 15:27:23,792 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics LIBJPEG 8.0.0
+2025-04-23 15:27:23,792 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-ASTRA1 2.0.2
+2025-04-23 15:27:23,792 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 7.1.0
+2025-04-23 15:27:23,792 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :Avnet-IotConnect X-CUBE-IoTC-DA16k-PMOD 1.0.0
+2025-04-23 15:27:23,792 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SMBUS 2.1.0
+2025-04-23 15:27:23,792 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-WB05N 1.1.0
+2025-04-23 15:27:23,792 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfMQTT 1.19.2
+2025-04-23 15:27:23,792 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 3.0.0
+2025-04-23 15:27:23,792 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ISPU 2.1.0
+2025-04-23 15:27:23,792 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WB 2.0.0
+2025-04-23 15:27:23,792 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 7.0.1
+2025-04-23 15:27:23,793 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F7 1.1.0
+2025-04-23 15:27:23,793 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L5 2.0.0
+2025-04-23 15:27:23,793 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.25.0
+2025-04-23 15:27:23,793 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 2.0.0
+2025-04-23 15:27:23,793 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC6 3.1.0
+2025-04-23 15:27:23,793 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-STBOX1 2.0.0
+2025-04-23 15:27:23,793 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 11.2.0
+2025-04-23 15:27:23,793 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FreeRTOS 0.0.1
+2025-04-23 15:27:23,793 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G0 1.1.0
+2025-04-23 15:27:23,793 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SAFEA1 1.2.2
+2025-04-23 15:27:23,793 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 3.0.0
+2025-04-23 15:27:23,793 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 5.0.0
+2025-04-23 15:27:23,793 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7RS 1.1.0
+2025-04-23 15:27:23,794 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics STM32_WPAN 1.0.0
+2025-04-23 15:27:23,794 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :EmbeddedOffice I-CUBE-FS-RTOS 1.0.1
+2025-04-23 15:27:23,794 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.0.3
+2025-04-23 15:27:23,794 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :Cesanta I-CUBE-Mongoose 7.13.0
+2025-04-23 15:27:23,794 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 1.0.0
+2025-04-23 15:27:23,794 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :Infineon AIROC-Wi-Fi-Bluetooth-STM32 1.7.0
+2025-04-23 15:27:23,794 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G4 2.0.0
+2025-04-23 15:27:23,794 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-WB05N 2.0.0
+2025-04-23 15:27:23,794 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.1.0
+2025-04-23 15:27:23,795 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.3.0
+2025-04-23 15:27:23,795 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfTPM 3.8.0
+2025-04-23 15:27:23,795 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DISPLAY 3.0.0
+2025-04-23 15:27:23,795 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSH 1.4.20
+2025-04-23 15:27:23,795 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TCPP 4.2.0
+2025-04-23 15:27:23,795 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :RealThread X-CUBE-RT-Thread_Nano 4.1.1
+2025-04-23 15:27:23,795 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-SIGFOX1 3.2.0
+2025-04-23 15:27:23,795 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC10 1.0.0
+2025-04-23 15:27:23,795 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLEMGR 4.0.0
+2025-04-23 15:27:23,795 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-EEPRMA1 5.1.0
+2025-04-23 15:27:23,796 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics HAL Drivers 0.0.0
+2025-04-23 15:27:23,796 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.16.2
+2025-04-23 15:27:23,796 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-IPS 3.1.0
+2025-04-23 15:27:23,796 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALS 1.0.2
+2025-04-23 15:27:23,796 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :emotas I-CUBE-CANOPEN 1.3.0
+2025-04-23 15:27:23,796 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-FREERTOS 1.3.0
+2025-04-23 15:27:23,796 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC7 1.0.1
+2025-04-23 15:27:23,796 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.14.1
+2025-04-23 15:27:23,796 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSL 5.7.6
+2025-04-23 15:27:23,797 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :ITTIA_DB I-CUBE-ITTIADB 8.9.0
+2025-04-23 15:27:23,797 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :portGmbH I-Cube-SoM-uGOAL 1.1.0
+2025-04-23 15:27:23,797 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :quantropi X-CUBE-qispace-sdk-base 2.0.0
+2025-04-23 15:27:23,797 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 10.0.0
+2025-04-23 15:27:23,797 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics ThreadX 1.0.0
+2025-04-23 15:27:23,797 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-SMARTAG2 1.2.0
+2025-04-23 15:27:23,798 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-FLIGHT1 5.1.0
+2025-04-23 15:27:23,798 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WL 2.0.0
+2025-04-23 15:27:23,800 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :SEGGER I-CUBE-embOS 1.3.1
+2025-04-23 15:27:23,800 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALGOBUILD 1.4.0
+2025-04-23 15:27:23,800 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DPower 1.3.0
+2025-04-23 15:27:23,800 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENV1 5.0.0
+2025-04-23 15:27:23,800 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 1.0.0
+2025-04-23 15:27:23,801 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L4 2.0.0
+2025-04-23 15:27:23,801 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics ThreadX 0.0.2
+2025-04-23 15:27:23,801 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :WES I-CUBE-Cesium 1.3.0
+2025-04-23 15:27:23,803 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.1.2
+2025-04-23 15:27:23,804 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SFXS2LP1 4.0.0
+2025-04-23 15:27:23,804 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE2 3.3.0
+2025-04-23 15:27:23,804 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOF1 3.4.3
+2025-04-23 15:27:23,804 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.2.0
+2025-04-23 15:27:23,805 [INFO] ThirdParty:841 - exiting critical section [change project]
+2025-04-23 15:27:24,127 [INFO] PinOutPanel:1589 - setPackage(No Configuration,No Configuration)
+2025-04-23 15:27:24,128 [INFO] PinOutPanel:1589 - setPackage(STM32L010RBTx,LQFP64)
+2025-04-23 15:27:25,058 [INFO] UtilMem:75 - Before build in PCC Used Memory: 587728896 Bytes (845152256)
+2025-04-23 15:27:25,776 [INFO] UtilMem:75 - After build in PCC Used Memory: 638582784 Bytes (845152256)
+2025-04-23 15:27:25,813 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,813 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,814 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,814 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,814 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,815 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,815 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,816 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,816 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,816 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,817 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,821 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,821 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,822 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,822 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,823 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,824 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,824 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,824 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,825 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-04-23 15:27:25,898 [INFO] CADModel:165 - CPN selected for project levelSTM32L010RBT6
+2025-04-23 15:27:25,898 [INFO] CADModel:114 - Register for checkConnection events
+2025-04-23 15:27:25,951 [INFO] OpenFileManager:385 - Restore cursor
+2025-04-23 15:27:26,657 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 696780800 Bytes (845152256)
+2025-04-23 15:27:26,763 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 706740224 Bytes (845152256)
+2025-04-23 15:27:26,991 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-23 15:27:26,991 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-23 15:27:26,991 [INFO] CodeGenerator:882 - code generatio: config db path: /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.common.mx_6.14.1.202504091515//db/
+2025-04-23 15:27:27,152 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/license.tmp_save
+2025-04-23 15:27:27,390 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/license.tmp
+2025-04-23 15:27:27,395 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_it.c_save
+2025-04-23 15:27:27,685 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_it.c
+2025-04-23 15:27:27,687 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_it.h_save
+2025-04-23 15:27:27,788 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_it.h
+2025-04-23 15:27:27,828 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_hal_msp.c_save
+2025-04-23 15:27:27,998 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_hal_msp.c
+2025-04-23 15:27:27,999 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/system.tmp_save
+2025-04-23 15:27:28,097 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/system.tmp
+2025-04-23 15:27:28,102 [INFO] CodeEngine:319 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_hal_conf.h_save
+2025-04-23 15:27:28,201 [INFO] CodeEngine:343 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_hal_conf.h
+2025-04-23 15:27:28,226 [INFO] ApiDbMcu:508 - Load IP Config File for RCC
+2025-04-23 15:27:28,231 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/main.h_save
+2025-04-23 15:27:28,389 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/main.h
+2025-04-23 15:27:28,391 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/main.c_save
+2025-04-23 15:27:28,557 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/main.c
+2025-04-23 15:27:28,988 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 37mS.
+2025-04-23 15:27:28,990 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2025-04-23 15:27:29,209 [INFO] ConfigFileManager:1590 - The Die is : DIE447
+2025-04-23 15:27:29,212 [INFO] ApiDbMcu:508 - Load IP Config File for FATFS
+2025-04-23 15:27:29,220 [INFO] ApiDbMcu:508 - Load IP Config File for FREERTOS
+2025-04-23 15:27:31,696 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 2706mS.
+2025-04-23 15:27:31,697 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-23 15:27:31,698 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-23 15:27:32,526 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
+2025-04-23 15:27:32,550 [INFO] ApiDb:448 - Save user favorites file /home/barin/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2025-04-23 15:27:32,552 [INFO] ApiDb:452 - User favorites MCUs=[]
+2025-04-23 15:30:07,679 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-23 15:30:18,604 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 339504912 Bytes (825229312)
+2025-04-23 15:30:22,485 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 376962480 Bytes (825229312)
+2025-04-23 15:30:22,658 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: ADC
+2025-04-23 15:30:22,659 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-23 15:30:22,659 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-23 15:30:22,659 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-23 15:30:22,659 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-04-23 15:30:22,659 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-23 15:30:22,660 [INFO] CodeGenerator:882 - code generatio: config db path: /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.common.mx_6.14.1.202504091515//db/
+2025-04-23 15:30:22,815 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/license.tmp_save
+2025-04-23 15:30:22,932 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/license.tmp
+2025-04-23 15:30:22,975 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/gpio.tmp_save
+2025-04-23 15:30:23,080 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/gpio.tmp
+2025-04-23 15:30:23,201 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_it.c_save
+2025-04-23 15:30:23,322 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_it.c
+2025-04-23 15:30:23,325 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_it.h_save
+2025-04-23 15:30:23,430 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_it.h
+2025-04-23 15:30:23,438 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_hal_msp.c_save
+2025-04-23 15:30:23,613 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_hal_msp.c
+2025-04-23 15:30:23,616 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/system.tmp_save
+2025-04-23 15:30:23,714 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/system.tmp
+2025-04-23 15:30:23,720 [INFO] CodeEngine:319 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_hal_conf.h_save
+2025-04-23 15:30:23,825 [INFO] CodeEngine:343 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_hal_conf.h
+2025-04-23 15:30:23,841 [INFO] ApiDbMcu:508 - Load IP Config File for ADC
+2025-04-23 15:30:23,849 [INFO] ApiDbMcu:508 - Load IP Config File for USART2
+2025-04-23 15:30:23,855 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/main.h_save
+2025-04-23 15:30:23,967 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/main.h
+2025-04-23 15:30:23,969 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/main.c_save
+2025-04-23 15:30:24,126 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/main.c
+2025-04-23 15:30:24,448 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 35mS.
+2025-04-23 15:30:24,451 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2025-04-23 15:30:24,587 [INFO] ConfigFileManager:1590 - The Die is : DIE447
+2025-04-23 15:30:25,657 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1207mS.
+2025-04-23 15:30:25,657 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-23 15:30:25,659 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-23 15:38:55,017 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-23 15:39:08,069 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 648594608 Bytes (825229312)
+2025-04-23 15:39:08,259 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: ADC
+2025-04-23 15:39:08,259 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-23 15:39:08,259 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-23 15:39:08,260 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-23 15:39:08,260 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-04-23 15:39:08,260 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-23 15:39:08,261 [INFO] CodeGenerator:882 - code generatio: config db path: /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.common.mx_6.14.1.202504091515//db/
+2025-04-23 15:39:08,420 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/license.tmp_save
+2025-04-23 15:39:08,539 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/license.tmp
+2025-04-23 15:39:08,567 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/gpio.tmp_save
+2025-04-23 15:39:08,692 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/gpio.tmp
+2025-04-23 15:39:08,831 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_it.c_save
+2025-04-23 15:39:08,952 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_it.c
+2025-04-23 15:39:08,956 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_it.h_save
+2025-04-23 15:39:09,074 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_it.h
+2025-04-23 15:39:09,079 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_hal_msp.c_save
+2025-04-23 15:39:09,261 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_hal_msp.c
+2025-04-23 15:39:09,264 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/system.tmp_save
+2025-04-23 15:39:09,376 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/system.tmp
+2025-04-23 15:39:09,381 [INFO] CodeEngine:319 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_hal_conf.h_save
+2025-04-23 15:39:09,488 [INFO] CodeEngine:343 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_hal_conf.h
+2025-04-23 15:39:09,507 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/main.h_save
+2025-04-23 15:39:09,619 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/main.h
+2025-04-23 15:39:09,622 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/main.c_save
+2025-04-23 15:39:09,793 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/main.c
+2025-04-23 15:39:10,179 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 36mS.
+2025-04-23 15:39:10,181 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2025-04-23 15:39:10,423 [INFO] ConfigFileManager:1590 - The Die is : DIE447
+2025-04-23 15:39:11,720 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1538mS.
+2025-04-23 15:39:11,721 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-23 15:39:11,722 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-23 16:11:36,414 [INFO] DmaTabbedPanel:205 - Cannot restore the selected Tab for DMA
+2025-04-23 16:12:09,011 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-23 16:12:12,020 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-23 16:12:42,317 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 437196328 Bytes (825229312)
+2025-04-23 16:12:44,303 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 455022120 Bytes (825229312)
+2025-04-23 16:12:44,905 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 491722280 Bytes (825229312)
+2025-04-23 16:12:45,064 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: ADC
+2025-04-23 16:12:45,064 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-23 16:12:45,064 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-23 16:12:45,064 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-23 16:12:45,065 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-04-23 16:12:45,065 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-23 16:12:45,065 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2025-04-23 16:12:45,065 [INFO] CodeGenerator:882 - code generatio: config db path: /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.common.mx_6.14.1.202504091515//db/
+2025-04-23 16:12:45,208 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/license.tmp_save
+2025-04-23 16:12:45,448 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/license.tmp
+2025-04-23 16:12:45,480 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/gpio.tmp_save
+2025-04-23 16:12:45,615 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/gpio.tmp
+2025-04-23 16:12:45,767 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/dma.tmp_save
+2025-04-23 16:12:45,885 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/dma.tmp
+2025-04-23 16:12:45,889 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/dma_GV.tmp_save
+2025-04-23 16:12:45,993 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/dma_GV.tmp
+2025-04-23 16:12:46,002 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_it.c_save
+2025-04-23 16:12:46,405 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_it.c
+2025-04-23 16:12:46,409 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_it.h_save
+2025-04-23 16:12:46,506 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_it.h
+2025-04-23 16:12:46,513 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_hal_msp.c_save
+2025-04-23 16:12:46,708 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_hal_msp.c
+2025-04-23 16:12:46,710 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/system.tmp_save
+2025-04-23 16:12:46,823 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/system.tmp
+2025-04-23 16:12:46,830 [INFO] CodeEngine:319 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_hal_conf.h_save
+2025-04-23 16:12:46,952 [INFO] CodeEngine:343 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_hal_conf.h
+2025-04-23 16:12:46,972 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/main.h_save
+2025-04-23 16:12:47,123 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/main.h
+2025-04-23 16:12:47,125 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/main.c_save
+2025-04-23 16:12:47,303 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/main.c
+2025-04-23 16:12:47,777 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 49mS.
+2025-04-23 16:12:47,782 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2025-04-23 16:12:48,140 [INFO] ConfigFileManager:1590 - The Die is : DIE447
+2025-04-23 16:12:49,516 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1735mS.
+2025-04-23 16:12:49,517 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-23 16:12:49,519 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-23 16:22:44,840 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 568142064 Bytes (825229312)
+2025-04-23 16:22:45,008 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: ADC
+2025-04-23 16:22:45,008 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-23 16:22:45,008 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-23 16:22:45,008 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-23 16:22:45,008 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-04-23 16:22:45,008 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-23 16:22:45,009 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2025-04-23 16:22:45,010 [INFO] CodeGenerator:882 - code generatio: config db path: /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.common.mx_6.14.1.202504091515//db/
+2025-04-23 16:22:45,013 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-04-23 16:22:45,013 [INFO] Argument:327 - 	 sub Args: 
+2025-04-23 16:22:45,013 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel1
+2025-04-23 16:22:45,014 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel1
+2025-04-23 16:22:45,014 [INFO] Argument:325 - Argument : Initvalue: null
+2025-04-23 16:22:45,014 [INFO] Argument:327 - 	 sub Args: 
+2025-04-23 16:22:45,014 [INFO] Argument:325 - Argument : Requestvalue: DMA_REQUEST_0
+2025-04-23 16:22:45,014 [INFO] Argument:335 - Argument : Requestvalue: DMA_REQUEST_0
+2025-04-23 16:22:45,014 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-04-23 16:22:45,014 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-04-23 16:22:45,014 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-04-23 16:22:45,014 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-04-23 16:22:45,014 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-04-23 16:22:45,014 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-04-23 16:22:45,015 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-04-23 16:22:45,015 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-04-23 16:22:45,015 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-04-23 16:22:45,015 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-04-23 16:22:45,015 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-04-23 16:22:45,015 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-04-23 16:22:45,015 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-04-23 16:22:45,015 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-04-23 16:22:45,015 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-04-23 16:22:45,015 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-04-23 16:22:45,015 [INFO] Argument:325 - Argument : Statevalue: null
+2025-04-23 16:22:45,015 [INFO] Argument:335 - Argument : Statevalue: null
+2025-04-23 16:22:45,016 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-04-23 16:22:45,016 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-04-23 16:22:45,016 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-04-23 16:22:45,016 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-04-23 16:22:45,016 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-04-23 16:22:45,016 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-04-23 16:22:45,016 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-04-23 16:22:45,016 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-04-23 16:22:45,016 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-04-23 16:22:45,016 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-04-23 16:22:45,167 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/license.tmp_save
+2025-04-23 16:22:45,309 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/license.tmp
+2025-04-23 16:22:45,349 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/gpio.tmp_save
+2025-04-23 16:22:45,495 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/gpio.tmp
+2025-04-23 16:22:45,629 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/dma.tmp_save
+2025-04-23 16:22:45,764 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/dma.tmp
+2025-04-23 16:22:45,766 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/dma_GV.tmp_save
+2025-04-23 16:22:45,891 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/dma_GV.tmp
+2025-04-23 16:22:45,900 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_it.c_save
+2025-04-23 16:22:46,014 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_it.c
+2025-04-23 16:22:46,017 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_it.h_save
+2025-04-23 16:22:46,114 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_it.h
+2025-04-23 16:22:46,119 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_hal_msp.c_save
+2025-04-23 16:22:46,267 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_hal_msp.c
+2025-04-23 16:22:46,269 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/system.tmp_save
+2025-04-23 16:22:46,390 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/system.tmp
+2025-04-23 16:22:46,395 [INFO] CodeEngine:319 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_hal_conf.h_save
+2025-04-23 16:22:46,491 [INFO] CodeEngine:343 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_hal_conf.h
+2025-04-23 16:22:46,504 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/main.h_save
+2025-04-23 16:22:46,602 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/main.h
+2025-04-23 16:22:46,605 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/main.c_save
+2025-04-23 16:22:46,764 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/main.c
+2025-04-23 16:22:47,167 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 38mS.
+2025-04-23 16:22:47,170 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2025-04-23 16:22:47,411 [INFO] ConfigFileManager:1590 - The Die is : DIE447
+2025-04-23 16:22:48,578 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1409mS.
+2025-04-23 16:22:48,583 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-23 16:22:48,589 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-23 16:37:07,916 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-23 16:37:38,408 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 693813408 Bytes (825229312)
+2025-04-23 16:37:46,044 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 272950272 Bytes (825229312)
+2025-04-23 16:37:46,243 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: ADC
+2025-04-23 16:37:46,243 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-23 16:37:46,243 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-23 16:37:46,243 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-23 16:37:46,243 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-04-23 16:37:46,243 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-23 16:37:46,244 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2025-04-23 16:37:46,245 [INFO] CodeGenerator:882 - code generatio: config db path: /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.common.mx_6.14.1.202504091515//db/
+2025-04-23 16:37:46,247 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-04-23 16:37:46,247 [INFO] Argument:327 - 	 sub Args: 
+2025-04-23 16:37:46,248 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel1
+2025-04-23 16:37:46,248 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel1
+2025-04-23 16:37:46,248 [INFO] Argument:325 - Argument : Initvalue: null
+2025-04-23 16:37:46,248 [INFO] Argument:327 - 	 sub Args: 
+2025-04-23 16:37:46,248 [INFO] Argument:325 - Argument : Requestvalue: DMA_REQUEST_0
+2025-04-23 16:37:46,248 [INFO] Argument:335 - Argument : Requestvalue: DMA_REQUEST_0
+2025-04-23 16:37:46,248 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-04-23 16:37:46,248 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-04-23 16:37:46,248 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-04-23 16:37:46,248 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-04-23 16:37:46,248 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-04-23 16:37:46,248 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-04-23 16:37:46,248 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-04-23 16:37:46,249 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-04-23 16:37:46,249 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-04-23 16:37:46,249 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-04-23 16:37:46,249 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-04-23 16:37:46,249 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-04-23 16:37:46,249 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-04-23 16:37:46,249 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-04-23 16:37:46,249 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-04-23 16:37:46,250 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-04-23 16:37:46,250 [INFO] Argument:325 - Argument : Statevalue: null
+2025-04-23 16:37:46,250 [INFO] Argument:335 - Argument : Statevalue: null
+2025-04-23 16:37:46,250 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-04-23 16:37:46,250 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-04-23 16:37:46,250 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-04-23 16:37:46,250 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-04-23 16:37:46,250 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-04-23 16:37:46,250 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-04-23 16:37:46,250 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-04-23 16:37:46,251 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-04-23 16:37:46,251 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-04-23 16:37:46,251 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-04-23 16:37:46,394 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/license.tmp_save
+2025-04-23 16:37:46,504 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/license.tmp
+2025-04-23 16:37:46,530 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/gpio.tmp_save
+2025-04-23 16:37:46,634 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/gpio.tmp
+2025-04-23 16:37:46,743 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/dma.tmp_save
+2025-04-23 16:37:46,851 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/dma.tmp
+2025-04-23 16:37:46,852 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/dma_GV.tmp_save
+2025-04-23 16:37:46,950 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/dma_GV.tmp
+2025-04-23 16:37:46,954 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_it.c_save
+2025-04-23 16:37:47,069 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_it.c
+2025-04-23 16:37:47,071 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_it.h_save
+2025-04-23 16:37:47,186 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_it.h
+2025-04-23 16:37:47,192 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_hal_msp.c_save
+2025-04-23 16:37:47,355 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_hal_msp.c
+2025-04-23 16:37:47,356 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/system.tmp_save
+2025-04-23 16:37:47,464 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/system.tmp
+2025-04-23 16:37:47,471 [INFO] CodeEngine:319 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_hal_conf.h_save
+2025-04-23 16:37:47,590 [INFO] CodeEngine:343 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_hal_conf.h
+2025-04-23 16:37:47,608 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/main.h_save
+2025-04-23 16:37:47,725 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/main.h
+2025-04-23 16:37:47,727 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/main.c_save
+2025-04-23 16:37:47,907 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/main.c
+2025-04-23 16:37:48,249 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 37mS.
+2025-04-23 16:37:48,252 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2025-04-23 16:37:48,405 [INFO] ConfigFileManager:1590 - The Die is : DIE447
+2025-04-23 16:37:49,611 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1359mS.
+2025-04-23 16:37:49,611 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-23 16:37:49,614 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-23 17:06:52,974 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,450x227,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-23 17:16:02,326 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 649914712 Bytes (825229312)
+2025-04-23 17:16:04,091 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 665643352 Bytes (825229312)
+2025-04-23 17:16:04,742 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 687663448 Bytes (825229312)
+2025-04-23 17:16:04,903 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: ADC
+2025-04-23 17:16:04,903 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-23 17:16:04,903 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-23 17:16:04,903 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-23 17:16:04,904 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-04-23 17:16:04,904 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-23 17:16:04,904 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2025-04-23 17:16:04,905 [INFO] CodeGenerator:882 - code generatio: config db path: /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.common.mx_6.14.1.202504091515//db/
+2025-04-23 17:16:04,908 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-04-23 17:16:04,908 [INFO] Argument:327 - 	 sub Args: 
+2025-04-23 17:16:04,908 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel1
+2025-04-23 17:16:04,908 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel1
+2025-04-23 17:16:04,908 [INFO] Argument:325 - Argument : Initvalue: null
+2025-04-23 17:16:04,908 [INFO] Argument:327 - 	 sub Args: 
+2025-04-23 17:16:04,908 [INFO] Argument:325 - Argument : Requestvalue: DMA_REQUEST_0
+2025-04-23 17:16:04,909 [INFO] Argument:335 - Argument : Requestvalue: DMA_REQUEST_0
+2025-04-23 17:16:04,909 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-04-23 17:16:04,909 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-04-23 17:16:04,909 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-04-23 17:16:04,909 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-04-23 17:16:04,909 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-04-23 17:16:04,909 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-04-23 17:16:04,909 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-04-23 17:16:04,909 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-04-23 17:16:04,909 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-04-23 17:16:04,909 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-04-23 17:16:04,910 [INFO] Argument:325 - Argument : Modevalue: DMA_CIRCULAR
+2025-04-23 17:16:04,910 [INFO] Argument:335 - Argument : Modevalue: DMA_CIRCULAR
+2025-04-23 17:16:04,910 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-04-23 17:16:04,910 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-04-23 17:16:04,910 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-04-23 17:16:04,910 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-04-23 17:16:04,910 [INFO] Argument:325 - Argument : Statevalue: null
+2025-04-23 17:16:04,910 [INFO] Argument:335 - Argument : Statevalue: null
+2025-04-23 17:16:04,910 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-04-23 17:16:04,910 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-04-23 17:16:04,910 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-04-23 17:16:04,910 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-04-23 17:16:04,910 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-04-23 17:16:04,910 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-04-23 17:16:04,910 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-04-23 17:16:04,910 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-04-23 17:16:04,911 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-04-23 17:16:04,911 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-04-23 17:16:05,188 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/license.tmp_save
+2025-04-23 17:16:05,490 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/license.tmp
+2025-04-23 17:16:05,526 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/gpio.tmp_save
+2025-04-23 17:16:05,678 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/gpio.tmp
+2025-04-23 17:16:05,866 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/dma.tmp_save
+2025-04-23 17:16:05,997 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/dma.tmp
+2025-04-23 17:16:05,999 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/dma_GV.tmp_save
+2025-04-23 17:16:06,101 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/dma_GV.tmp
+2025-04-23 17:16:06,109 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_it.c_save
+2025-04-23 17:16:06,407 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_it.c
+2025-04-23 17:16:06,410 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_it.h_save
+2025-04-23 17:16:06,518 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_it.h
+2025-04-23 17:16:06,524 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_hal_msp.c_save
+2025-04-23 17:16:06,725 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_hal_msp.c
+2025-04-23 17:16:06,727 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/system.tmp_save
+2025-04-23 17:16:06,827 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/system.tmp
+2025-04-23 17:16:06,831 [INFO] CodeEngine:319 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_hal_conf.h_save
+2025-04-23 17:16:06,933 [INFO] CodeEngine:343 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_hal_conf.h
+2025-04-23 17:16:06,950 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/main.h_save
+2025-04-23 17:16:07,093 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/main.h
+2025-04-23 17:16:07,095 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/main.c_save
+2025-04-23 17:16:07,261 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/main.c
+2025-04-23 17:16:07,587 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 39mS.
+2025-04-23 17:16:07,589 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2025-04-23 17:16:07,759 [INFO] ConfigFileManager:1590 - The Die is : DIE447
+2025-04-23 17:16:08,998 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1409mS.
+2025-04-23 17:16:08,998 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-23 17:16:09,005 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 6mS.
+2025-04-23 17:36:34,409 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-23 17:36:38,896 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-23 17:38:04,591 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 538739312 Bytes (825229312)
+2025-04-23 17:38:06,373 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 555516528 Bytes (825229312)
+2025-04-23 17:38:06,988 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 577536624 Bytes (825229312)
+2025-04-23 17:38:07,178 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: ADC
+2025-04-23 17:38:07,178 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-23 17:38:07,178 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-23 17:38:07,179 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-23 17:38:07,179 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-04-23 17:38:07,179 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-23 17:38:07,179 [INFO] CodeGenerator:882 - code generatio: config db path: /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.common.mx_6.14.1.202504091515//db/
+2025-04-23 17:38:07,326 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/license.tmp_save
+2025-04-23 17:38:07,499 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/license.tmp
+2025-04-23 17:38:07,528 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/gpio.tmp_save
+2025-04-23 17:38:07,743 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/gpio.tmp
+2025-04-23 17:38:07,831 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_it.c_save
+2025-04-23 17:38:08,121 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_it.c
+2025-04-23 17:38:08,123 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_it.h_save
+2025-04-23 17:38:08,220 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_it.h
+2025-04-23 17:38:08,226 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_hal_msp.c_save
+2025-04-23 17:38:08,404 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/stm32l0xx_hal_msp.c
+2025-04-23 17:38:08,405 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/system.tmp_save
+2025-04-23 17:38:08,494 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/MXTmpFiles/system.tmp
+2025-04-23 17:38:08,499 [INFO] CodeEngine:319 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_hal_conf.h_save
+2025-04-23 17:38:08,599 [INFO] CodeEngine:343 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/stm32l0xx_hal_conf.h
+2025-04-23 17:38:08,617 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/main.h_save
+2025-04-23 17:38:08,753 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Inc/main.h
+2025-04-23 17:38:08,755 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/main.c_save
+2025-04-23 17:38:08,901 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_ADC_IN6/Core/Src/main.c
+2025-04-23 17:38:09,230 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 33mS.
+2025-04-23 17:38:09,233 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2025-04-23 17:38:09,363 [INFO] ConfigFileManager:1590 - The Die is : DIE447
+2025-04-23 17:38:10,585 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1353mS.
+2025-04-23 17:38:10,585 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-23 17:38:10,592 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
