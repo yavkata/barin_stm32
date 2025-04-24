@@ -6,6 +6,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -15,7 +16,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define ADC_RESOLUTION 4095.0f
-#define VREF 3.0f
+#define VDDA_VOLTAGE   3.0f // Adjust this if your VDDA is different
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -28,8 +29,7 @@ ADC_HandleTypeDef hadc;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-char msg[64];
-uint16_t adc_raw;
+char msg[64]; // Global buffer for UART
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -38,6 +38,9 @@ static void MX_GPIO_Init(void);
 static void MX_ADC_Init(void);
 static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
+void ADC_Select_Channel(uint32_t channel);
+uint16_t ADC_Read_Value(void);
+void ADC_Print_Single_Channel(uint32_t channel, const char* label);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -73,24 +76,28 @@ int main(void)
   MX_ADC_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+  // ADC Calibration
+  if (HAL_ADCEx_Calibration_Start(&hadc, ADC_SINGLE_ENDED) != HAL_OK)
+  {
+      Error_Handler();
+  }
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-    /* USER CODE END WHILE */
   while (1)
-    {
-      HAL_ADC_Start(&hadc);
-      HAL_ADC_PollForConversion(&hadc, HAL_MAX_DELAY);
-      adc_raw = HAL_ADC_GetValue(&hadc);
-      HAL_ADC_Stop(&hadc);
+  {
+	 // ADC_Print_Single_Channel(ADC_CHANNEL_4, "IN4");
+	 //     HAL_Delay(1000);
 
-      float voltage = ((float)adc_raw / ADC_RESOLUTION) * VREF;
-      int len = snprintf(msg, sizeof(msg), "ADC_IN6: %.3f V\r\n", voltage);
-      HAL_UART_Transmit(&huart2, (uint8_t*)msg, len, HAL_MAX_DELAY);
+	 //     ADC_Print_Single_Channel(ADC_CHANNEL_5, "IN5");
+	 //     HAL_Delay(1000);
 
-      HAL_Delay(1000);
-    }
+	      ADC_Print_Single_Channel(ADC_CHANNEL_6, "IN6");
+	      HAL_Delay(1000);
+  }
+    /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
   /* USER CODE END 3 */
 }
@@ -182,11 +189,7 @@ static void MX_ADC_Init(void)
   {
     Error_Handler();
   }
-  // 🧪 Perform ADC Calibration
-   if (HAL_ADCEx_Calibration_Start(&hadc, ADC_SINGLE_ENDED) != HAL_OK)
-   {
-     Error_Handler();
-   }
+
   /** Configure for the selected ADC regular channel to be converted.
   */
   sConfig.Channel = ADC_CHANNEL_6;
@@ -250,6 +253,54 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+// Select the ADC channel
+void ADC_Select_Channel(uint32_t channel)
+{
+    ADC_ChannelConfTypeDef sConfig = {0};
+    sConfig.Channel = channel;
+    sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
+    if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    // Dummy reads to stabilize after channel switch
+    for (int i = 0; i < 2; i++) {
+        HAL_ADC_Start(&hadc);
+        HAL_ADC_PollForConversion(&hadc, HAL_MAX_DELAY);
+        HAL_ADC_GetValue(&hadc);
+        HAL_ADC_Stop(&hadc);
+    }
+}
+
+// Read ADC value for the selected channel
+uint16_t ADC_Read_Value(void)
+{
+	 uint32_t sum = 0;
+	    const uint8_t samples = 8;
+
+	    for (uint8_t i = 0; i < samples; i++) {
+	        HAL_ADC_Start(&hadc);
+	        HAL_ADC_PollForConversion(&hadc, HAL_MAX_DELAY);
+	        sum += HAL_ADC_GetValue(&hadc);
+	        HAL_ADC_Stop(&hadc);
+	        HAL_Delay(2);  // small delay to allow voltage to settle
+	    }
+
+	    return (uint16_t)(sum / samples);
+}
+// Print ADC values for single channel
+void ADC_Print_Single_Channel(uint32_t channel, const char* label)
+{
+    char msg[64];
+    float voltage;
+
+    ADC_Select_Channel(channel);
+    uint16_t raw = ADC_Read_Value();
+    voltage = (raw / ADC_RESOLUTION) * 3.0f;
+
+    snprintf(msg, sizeof(msg), "%s: %.3f V\r\n", label, voltage);
+    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+}
 /* USER CODE END 4 */
 
 /**
