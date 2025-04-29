@@ -1,0 +1,104 @@
+2025-04-27 00:12:32,619 [INFO] Gpio:277 - dependency for GPIO [I2C1, USART2]
+2025-04-27 00:13:30,559 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,2,26,384x298,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-04-27 00:14:05,604 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 267269352 Bytes (964689920)
+2025-04-27 00:14:07,928 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 338710712 Bytes (947912704)
+2025-04-27 00:14:08,249 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-27 00:14:08,249 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-27 00:14:08,249 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-27 00:14:08,250 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-04-27 00:14:08,250 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-27 00:14:08,251 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2025-04-27 00:14:08,252 [INFO] CodeGenerator:882 - code generatio: config db path: /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.common.mx_6.14.1.202504091515//db/
+2025-04-27 00:14:08,517 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/MXTmpFiles/license.tmp_save
+2025-04-27 00:14:09,416 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/MXTmpFiles/license.tmp
+2025-04-27 00:14:09,575 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/MXTmpFiles/gpio.tmp_save
+2025-04-27 00:14:09,957 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/MXTmpFiles/gpio.tmp
+2025-04-27 00:14:10,423 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Src/stm32l0xx_it.c_save
+2025-04-27 00:14:11,333 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Src/stm32l0xx_it.c
+2025-04-27 00:14:11,336 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Inc/stm32l0xx_it.h_save
+2025-04-27 00:14:11,515 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Inc/stm32l0xx_it.h
+2025-04-27 00:14:11,536 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Src/stm32l0xx_hal_msp.c_save
+2025-04-27 00:14:11,892 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Src/stm32l0xx_hal_msp.c
+2025-04-27 00:14:11,897 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/MXTmpFiles/system.tmp_save
+2025-04-27 00:14:12,041 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/MXTmpFiles/system.tmp
+2025-04-27 00:14:12,049 [INFO] CodeEngine:319 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Inc/stm32l0xx_hal_conf.h_save
+2025-04-27 00:14:12,197 [INFO] CodeEngine:343 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Inc/stm32l0xx_hal_conf.h
+2025-04-27 00:14:12,252 [INFO] ApiDbMcu:508 - Load IP Config File for I2C1
+2025-04-27 00:14:12,271 [INFO] ApiDbMcu:508 - Load IP Config File for USART2
+2025-04-27 00:14:12,276 [INFO] ApiDbMcu:508 - Load IP Config File for RCC
+2025-04-27 00:14:12,284 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Inc/main.h_save
+2025-04-27 00:14:12,546 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Inc/main.h
+2025-04-27 00:14:12,550 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Src/main.c_save
+2025-04-27 00:14:12,830 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Src/main.c
+2025-04-27 00:14:13,321 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 61mS.
+2025-04-27 00:14:13,327 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2025-04-27 00:14:13,535 [INFO] ConfigFileManager:1590 - The Die is : DIE447
+2025-04-27 00:14:13,540 [INFO] ApiDbMcu:508 - Load IP Config File for FATFS
+2025-04-27 00:14:13,550 [INFO] ApiDbMcu:508 - Load IP Config File for FREERTOS
+2025-04-27 00:14:16,187 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 2859mS.
+2025-04-27 00:14:16,187 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-27 00:14:16,188 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-27 01:48:54,351 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 282686080 Bytes (828375040)
+2025-04-27 01:48:56,052 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-27 01:48:56,052 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-27 01:48:56,059 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-27 01:48:56,065 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-04-27 01:48:56,068 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-27 01:48:56,069 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2025-04-27 01:48:56,069 [INFO] CodeGenerator:882 - code generatio: config db path: /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.common.mx_6.14.1.202504091515//db/
+2025-04-27 01:48:56,904 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/MXTmpFiles/license.tmp_save
+2025-04-27 01:48:58,431 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/MXTmpFiles/license.tmp
+2025-04-27 01:48:58,817 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/MXTmpFiles/gpio.tmp_save
+2025-04-27 01:48:59,354 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/MXTmpFiles/gpio.tmp
+2025-04-27 01:49:00,108 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Src/stm32l0xx_it.c_save
+2025-04-27 01:49:01,283 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Src/stm32l0xx_it.c
+2025-04-27 01:49:01,287 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Inc/stm32l0xx_it.h_save
+2025-04-27 01:49:01,542 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Inc/stm32l0xx_it.h
+2025-04-27 01:49:01,578 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Src/stm32l0xx_hal_msp.c_save
+2025-04-27 01:49:02,395 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Src/stm32l0xx_hal_msp.c
+2025-04-27 01:49:02,405 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/MXTmpFiles/system.tmp_save
+2025-04-27 01:49:02,829 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/MXTmpFiles/system.tmp
+2025-04-27 01:49:02,883 [INFO] CodeEngine:319 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Inc/stm32l0xx_hal_conf.h_save
+2025-04-27 01:49:03,278 [INFO] CodeEngine:343 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Inc/stm32l0xx_hal_conf.h
+2025-04-27 01:49:03,387 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Inc/main.h_save
+2025-04-27 01:49:03,782 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Inc/main.h
+2025-04-27 01:49:03,790 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Src/main.c_save
+2025-04-27 01:49:04,318 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Src/main.c
+2025-04-27 01:49:05,141 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 84mS.
+2025-04-27 01:49:05,145 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2025-04-27 01:49:05,452 [INFO] ConfigFileManager:1590 - The Die is : DIE447
+2025-04-27 01:49:08,893 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 3747mS.
+2025-04-27 01:49:08,894 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2025-04-27 01:49:08,903 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-04-27 01:50:28,602 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 257593344 Bytes (828375040)
+2025-04-27 01:50:28,966 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-04-27 01:50:28,966 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-04-27 01:50:28,969 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-04-27 01:50:28,971 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: USART
+2025-04-27 01:50:28,975 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-04-27 01:50:28,975 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2025-04-27 01:50:28,979 [INFO] CodeGenerator:882 - code generatio: config db path: /opt/st/stm32cubeide_1.18.1/plugins/com.st.stm32cube.common.mx_6.14.1.202504091515//db/
+2025-04-27 01:50:29,206 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/MXTmpFiles/license.tmp_save
+2025-04-27 01:50:29,339 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/MXTmpFiles/license.tmp
+2025-04-27 01:50:29,384 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/MXTmpFiles/gpio.tmp_save
+2025-04-27 01:50:29,499 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/MXTmpFiles/gpio.tmp
+2025-04-27 01:50:29,672 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Src/stm32l0xx_it.c_save
+2025-04-27 01:50:29,822 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Src/stm32l0xx_it.c
+2025-04-27 01:50:29,825 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Inc/stm32l0xx_it.h_save
+2025-04-27 01:50:29,974 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Inc/stm32l0xx_it.h
+2025-04-27 01:50:29,987 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Src/stm32l0xx_hal_msp.c_save
+2025-04-27 01:50:30,201 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Src/stm32l0xx_hal_msp.c
+2025-04-27 01:50:30,206 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/MXTmpFiles/system.tmp_save
+2025-04-27 01:50:30,326 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/MXTmpFiles/system.tmp
+2025-04-27 01:50:30,334 [INFO] CodeEngine:319 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Inc/stm32l0xx_hal_conf.h_save
+2025-04-27 01:50:30,437 [INFO] CodeEngine:343 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Inc/stm32l0xx_hal_conf.h
+2025-04-27 01:50:30,458 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Inc/main.h_save
+2025-04-27 01:50:30,602 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Inc/main.h
+2025-04-27 01:50:30,605 [INFO] CodeEngine:263 - oldGeneratedFile, /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Src/main.c_save
+2025-04-27 01:50:30,828 [INFO] CodeEngine:287 - Generated code: /home/barin/Documents/barin_stm32/STM32L010RBT6_I2C_LIS3DH/Core/Src/main.c
+2025-04-27 01:50:31,246 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 47mS.
+2025-04-27 01:50:31,249 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0.1-B1
+2025-04-27 01:50:31,416 [INFO] ConfigFileManager:1590 - The Die is : DIE447
+2025-04-27 01:50:33,095 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1846mS.
+2025-04-27 01:50:33,100 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2025-04-27 01:50:33,105 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.

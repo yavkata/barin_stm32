@@ -1,0 +1,9 @@
+../Core/Src/main.c:68:6:I2C_Scan_Bus	3
+../Core/Src/main.c:98:5:main	1
+../Core/Src/main.c:148:6:SystemClock_Config	4
+../Core/Src/main.c:198:13:MX_I2C1_Init	4
+../Core/Src/main.c:246:13:MX_USART2_UART_Init	2
+../Core/Src/main.c:281:13:MX_GPIO_Init	1
+../Core/Src/main.c:296:9:LIS3DH_Read_WhoAmI	1
+../Core/Src/main.c:302:6:LIS3DH_Print_WhoAmI	2
+../Core/Src/main.c:318:6:Error_Handler	1
