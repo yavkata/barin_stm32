@@ -901,3 +901,59 @@ Finished building: default.size.stdout
  
 Finished building: STM32L010RBT6_I2C_LIS3DH.list
  
+15:11:07 **** Incremental Build of configuration Debug for project STM32L010RBT6_MP2760 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L010xB -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'MP2760_Live_Status':
+../Core/Src/main.c:84:5: warning: implicit declaration of function 'snprintf' [-Wimplicit-function-declaration]
+   84 |     snprintf(msg, sizeof(msg), "\rCHG:0x%02X FLT:0x%02X INP:0x%02X", charger_status, fault_status, input_status);
+      |     ^~~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:84:5: warning: incompatible implicit declaration of built-in function 'snprintf' [-Wbuiltin-declaration-mismatch]
+   84 |     snprintf(msg, sizeof(msg), "\rCHG:0x%02X FLT:0x%02X INP:0x%02X", charger_status, fault_status, input_status);
+      |     ^~~~~~~~
+../Core/Src/main.c:84:5: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+../Core/Src/main.c:85:47: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   85 |     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+      |                                               ^~~~~~
+../Core/Src/main.c:21:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   20 | #include "main.h"
+  +++ |+#include <string.h>
+   21 | 
+../Core/Src/main.c:85:47: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+   85 |     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+      |                                               ^~~~~~
+../Core/Src/main.c:85:47: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:122:47: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  122 |   HAL_UART_Transmit(&huart2, (uint8_t*)hello, strlen(hello), HAL_MAX_DELAY);
+      |                                               ^~~~~~
+../Core/Src/main.c:122:47: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "STM32L010RBT6_MP2760.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/barin/Documents/barin_stm32/STM32L010RBT6_MP2760/STM32L010RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L010RBT6_MP2760.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32L010RBT6_MP2760.elf
+ 
+arm-none-eabi-size  STM32L010RBT6_MP2760.elf 
+arm-none-eabi-objdump -h -S STM32L010RBT6_MP2760.elf  > "STM32L010RBT6_MP2760.list"
+   text	   data	    bss	    dec	    hex	filename
+  19172	     92	   2124	  21388	   538c	STM32L010RBT6_MP2760.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32L010RBT6_MP2760.list
+ 
+15:11:45 **** Incremental Build of configuration Debug for project STM32L010RBT6_MP2760 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L010xB -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32L010RBT6_MP2760.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/barin/Documents/barin_stm32/STM32L010RBT6_MP2760/STM32L010RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L010RBT6_MP2760.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32L010RBT6_MP2760.elf
+ 
+arm-none-eabi-size  STM32L010RBT6_MP2760.elf 
+arm-none-eabi-objdump -h -S STM32L010RBT6_MP2760.elf  > "STM32L010RBT6_MP2760.list"
+   text	   data	    bss	    dec	    hex	filename
+  19172	     92	   2124	  21388	   538c	STM32L010RBT6_MP2760.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32L010RBT6_MP2760.list
+ 
