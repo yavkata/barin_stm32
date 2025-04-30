@@ -195,6 +195,7 @@ void MP2760_PrintAdvancedPathStatus(void)
         if (reg17 & (1 << 2))  HAL_UART_Transmit(&huart2, (uint8_t*)"Bit  2: Watchdog Timeout\r\n", 26, HAL_MAX_DELAY);
         if (reg17 & (1 << 1))  HAL_UART_Transmit(&huart2, (uint8_t*)"Bit  1: VBUS Present\r\n", 23, HAL_MAX_DELAY);
         if (reg17 & (1 << 0))  HAL_UART_Transmit(&huart2, (uint8_t*)"Bit  0: CHG_EN Pin State = HIGH\r\n", 33, HAL_MAX_DELAY);
+    }
 }
 
 void MP2760_Dashboard(void)

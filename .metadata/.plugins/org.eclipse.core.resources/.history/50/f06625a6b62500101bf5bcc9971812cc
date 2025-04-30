@@ -88,7 +88,6 @@ float MP2760_ReadVoltage(uint8_t msb_reg)
     uint16_t raw = (msb << 4) | (lsb >> 4);
     return raw * 0.00488f; // Each LSB = 4.88mV
 }
-
 void MP2760_PrintStatus(void)
 {
     uint8_t input_status = MP2760_ReadRegister(0x0A);
@@ -132,18 +131,9 @@ void MP2760_PrintThresholds(void)
     float vbat_reg = 3.84 + (vbat_reg_raw * 0.032);
 
     char msg[128];
-    const char* vin_ovp_str[] = { "14.4V", "18.4V", "20.0V", "22.4V" };
-    const char* vin_uvlo_str[] = { "3.2V", "4.2V", "4.6V", "4.8V" };
-
     snprintf(msg, sizeof(msg),
-             "Thresholds:\r\n"
-             "VIN_OVP Setting: %d (%s)\r\n"
-             "VIN_UVLO Setting: %d (%s)\r\n"
-             "SYS_REG: %.2fV\r\n"
-             "VBAT_REG: %.2fV\r\n",
-             vin_ovp, vin_ovp_str[vin_ovp],
-             vin_uvlo, vin_uvlo_str[vin_uvlo],
-             sys_reg, vbat_reg);
+             "Thresholds:\r\nVIN_OVP Setting: %d (code)\r\nVIN_UVLO Setting: %d (code)\r\nSYS_REG: %.2fV\r\nVBAT_REG: %.2fV\r\n",
+             vin_ovp, vin_uvlo, sys_reg, vbat_reg);
 
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 }
@@ -179,22 +169,11 @@ void MP2760_PrintAdvancedPathStatus(void)
     snprintf(msg, sizeof(msg), "Advanced Path Status REG17h: 0x%04X\r\n", reg17);
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    if (reg17 & (1 << 15)) HAL_UART_Transmit(&huart2, (uint8_t*)"Bit 15: Reserved (set)\r\n", 24, HAL_MAX_DELAY);
-        if (reg17 & (1 << 14)) HAL_UART_Transmit(&huart2, (uint8_t*)"Bit 14: SYS LDO Fault\r\n", 23, HAL_MAX_DELAY);
-        if (reg17 & (1 << 13)) HAL_UART_Transmit(&huart2, (uint8_t*)"Bit 13: ACFET Fault\r\n", 21, HAL_MAX_DELAY);
-        if (reg17 & (1 << 12)) HAL_UART_Transmit(&huart2, (uint8_t*)"Bit 12: BATFET Fault\r\n", 23, HAL_MAX_DELAY);
-        if (reg17 & (1 << 11)) HAL_UART_Transmit(&huart2, (uint8_t*)"Bit 11: Reverse Blocking Enabled\r\n", 34, HAL_MAX_DELAY);
-        if (reg17 & (1 << 10)) HAL_UART_Transmit(&huart2, (uint8_t*)"Bit 10: SYS Short Fault\r\n", 26, HAL_MAX_DELAY);
-        if (reg17 & (1 << 9))  HAL_UART_Transmit(&huart2, (uint8_t*)"Bit  9: SYS LDO Path Active\r\n", 29, HAL_MAX_DELAY);
-        if (reg17 & (1 << 8))  HAL_UART_Transmit(&huart2, (uint8_t*)"Bit  8: VBUS Source Path Active (SRC_EN)\r\n", 42, HAL_MAX_DELAY);
-        if (reg17 & (1 << 7))  HAL_UART_Transmit(&huart2, (uint8_t*)"Bit  7: Reserved\r\n", 19, HAL_MAX_DELAY);
-        if (reg17 & (1 << 6))  HAL_UART_Transmit(&huart2, (uint8_t*)"Bit  6: Reserved\r\n", 19, HAL_MAX_DELAY);
-        if (reg17 & (1 << 5))  HAL_UART_Transmit(&huart2, (uint8_t*)"Bit  5: NTC Fault (Temp Out of Range)\r\n", 39, HAL_MAX_DELAY);
-        if (reg17 & (1 << 4))  HAL_UART_Transmit(&huart2, (uint8_t*)"Bit  4: Battery Insert Detected\r\n", 33, HAL_MAX_DELAY);
-        if (reg17 & (1 << 3))  HAL_UART_Transmit(&huart2, (uint8_t*)"Bit  3: Charging Terminated\r\n", 30, HAL_MAX_DELAY);
-        if (reg17 & (1 << 2))  HAL_UART_Transmit(&huart2, (uint8_t*)"Bit  2: Watchdog Timeout\r\n", 26, HAL_MAX_DELAY);
-        if (reg17 & (1 << 1))  HAL_UART_Transmit(&huart2, (uint8_t*)"Bit  1: VBUS Present\r\n", 23, HAL_MAX_DELAY);
-        if (reg17 & (1 << 0))  HAL_UART_Transmit(&huart2, (uint8_t*)"Bit  0: CHG_EN Pin State = HIGH\r\n", 33, HAL_MAX_DELAY);
+    if (reg17 & (1 << 13)) HAL_UART_Transmit(&huart2, (uint8_t*)"Fault: ACFET Failure Detected!\r\n", 32, HAL_MAX_DELAY);
+    if (reg17 & (1 << 12)) HAL_UART_Transmit(&huart2, (uint8_t*)"Fault: BATFET Failure Detected!\r\n", 33, HAL_MAX_DELAY);
+    if (reg17 & (1 << 9))  HAL_UART_Transmit(&huart2, (uint8_t*)"Fault: SYS LDO Failure!\r\n", 25, HAL_MAX_DELAY);
+    if (reg17 & (1 << 8))  HAL_UART_Transmit(&huart2, (uint8_t*)"Fault: VBAT Short Detected!\r\n", 28, HAL_MAX_DELAY);
+    if (reg17 & (1 << 5))  HAL_UART_Transmit(&huart2, (uint8_t*)"Fault: NTC Failure!\r\n", 22, HAL_MAX_DELAY);
 }
 
 void MP2760_Dashboard(void)
