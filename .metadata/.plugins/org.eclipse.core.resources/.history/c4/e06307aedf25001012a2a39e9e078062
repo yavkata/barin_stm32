@@ -102,100 +102,100 @@ void MP2760_PrintAllRegisters(void)
 {
     char msg[128];
 
-    snprintf(msg, sizeof(msg), "REG05  Device Address Settings:  0x%04X\r\n", MP2760_ReadRegister16(0x05));
+    snprintf(msg, sizeof(msg), "REG05  Device Address Settings:  0x%04X\\r\\n", MP2760_ReadRegister16(0x05));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG06  Input Minimum Voltage Limit Settings:  0x%04X\r\n", MP2760_ReadRegister16(0x06));
+    snprintf(msg, sizeof(msg), "REG06  Input Minimum Voltage Limit Settings:  0x%04X\\r\\n", MP2760_ReadRegister16(0x06));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG07  System Minimum Voltage Settings:  0x%04X\r\n", MP2760_ReadRegister16(0x07));
+    snprintf(msg, sizeof(msg), "REG07  System Minimum Voltage Settings:  0x%04X\\r\\n", MP2760_ReadRegister16(0x07));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG08  Input Current Limit Settings:  0x%04X\r\n", MP2760_ReadRegister16(0x08));
+    snprintf(msg, sizeof(msg), "REG08  Input Current Limit Settings:  0x%04X\\r\\n", MP2760_ReadRegister16(0x08));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG09  Output Voltage Settings in Source Mode:  0x%04X\r\n", MP2760_ReadRegister16(0x09));
+    snprintf(msg, sizeof(msg), "REG09  Output Voltage Settings in Source Mode:  0x%04X\\r\\n", MP2760_ReadRegister16(0x09));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG0A  Battery Impedance Compensation and Output Current Limit Settings:  0x%04X\r\n", MP2760_ReadRegister16(0x0A));
+    snprintf(msg, sizeof(msg), "REG0A  Battery Impedance Compensation and Output Current Limit Settings:  0x%04X\\r\\n", MP2760_ReadRegister16(0x0A));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG0B  Battery Low Voltage Settings and Battery Discharge Current Regulation:  0x%04X\r\n", MP2760_ReadRegister16(0x0B));
+    snprintf(msg, sizeof(msg), "REG0B  Battery Low Voltage Settings and Battery Discharge Current Regulation:  0x%04X\\r\\n", MP2760_ReadRegister16(0x0B));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG0C  JEITA Action Settings:  0x%04X\r\n", MP2760_ReadRegister16(0x0C));
+    snprintf(msg, sizeof(msg), "REG0C  JEITA Action Settings:  0x%04X\\r\\n", MP2760_ReadRegister16(0x0C));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG0D  Temperature Protection Settings:  0x%04X\r\n", MP2760_ReadRegister16(0x0D));
+    snprintf(msg, sizeof(msg), "REG0D  Temperature Protection Settings:  0x%04X\\r\\n", MP2760_ReadRegister16(0x0D));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG0E  Configuration Register 0:  0x%04X\r\n", MP2760_ReadRegister16(0x0E));
+    snprintf(msg, sizeof(msg), "REG0E  Configuration Register 0:  0x%04X\\r\\n", MP2760_ReadRegister16(0x0E));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG0F  Configuration Register 1:  0x%04X\r\n", MP2760_ReadRegister16(0x0F));
+    snprintf(msg, sizeof(msg), "REG0F  Configuration Register 1:  0x%04X\\r\\n", MP2760_ReadRegister16(0x0F));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG10  Configuration Register 2:  0x%04X\r\n", MP2760_ReadRegister16(0x10));
+    snprintf(msg, sizeof(msg), "REG10  Configuration Register 2:  0x%04X\\r\\n", MP2760_ReadRegister16(0x10));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG11  Configuration Register 3:  0x%04X\r\n", MP2760_ReadRegister16(0x11));
+    snprintf(msg, sizeof(msg), "REG11  Configuration Register 3:  0x%04X\\r\\n", MP2760_ReadRegister16(0x11));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG12  Configuration Register 4:  0x%04X\r\n", MP2760_ReadRegister16(0x12));
+    snprintf(msg, sizeof(msg), "REG12  Configuration Register 4:  0x%04X\\r\\n", MP2760_ReadRegister16(0x12));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG14  Charge Current Setting:  0x%04X\r\n", MP2760_ReadRegister16(0x14));
+    snprintf(msg, sizeof(msg), "REG14  Charge Current Setting:  0x%04X\\r\\n", MP2760_ReadRegister16(0x14));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG15  Battery-Full Voltage Setting:  0x%04X\r\n", MP2760_ReadRegister16(0x15));
+    snprintf(msg, sizeof(msg), "REG15  Battery-Full Voltage Setting:  0x%04X\\r\\n", MP2760_ReadRegister16(0x15));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG16  Status and Fault Register 0:  0x%04X\r\n", MP2760_ReadRegister16(0x16));
+    snprintf(msg, sizeof(msg), "REG16  Status and Fault Register 0:  0x%04X\\r\\n", MP2760_ReadRegister16(0x16));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG17  Status and Fault Register 1:  0x%04X\r\n", MP2760_ReadRegister16(0x17));
+    snprintf(msg, sizeof(msg), "REG17  Status and Fault Register 1:  0x%04X\\r\\n", MP2760_ReadRegister16(0x17));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG18  INT Mask Setting Register 0:  0x%04X\r\n", MP2760_ReadRegister16(0x18));
+    snprintf(msg, sizeof(msg), "REG18  INT Mask Setting Register 0:  0x%04X\\r\\n", MP2760_ReadRegister16(0x18));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG19  INT Mask Setting Register 1:  0x%04X\r\n", MP2760_ReadRegister16(0x19));
+    snprintf(msg, sizeof(msg), "REG19  INT Mask Setting Register 1:  0x%04X\\r\\n", MP2760_ReadRegister16(0x19));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG22  Internal DAC Output of the Input Current Limit:  0x%04X\r\n", MP2760_ReadRegister16(0x22));
+    snprintf(msg, sizeof(msg), "REG22  Internal DAC Output of the Input Current Limit:  0x%04X\\r\\n", MP2760_ReadRegister16(0x22));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG23  ADC Result of the Input Voltage:  0x%04X\r\n", MP2760_ReadRegister16(0x23));
+    snprintf(msg, sizeof(msg), "REG23  ADC Result of the Input Voltage:  0x%04X\\r\\n", MP2760_ReadRegister16(0x23));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG24  ADC Result of the Input Current:  0x%04X\r\n", MP2760_ReadRegister16(0x24));
+    snprintf(msg, sizeof(msg), "REG24  ADC Result of the Input Current:  0x%04X\\r\\n", MP2760_ReadRegister16(0x24));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG25  ADC Result of the Battery Voltage per Cell:  0x%04X\r\n", MP2760_ReadRegister16(0x25));
+    snprintf(msg, sizeof(msg), "REG25  ADC Result of the Battery Voltage per Cell:  0x%04X\\r\\n", MP2760_ReadRegister16(0x25));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG26  ADC Result of the System Voltage:  0x%04X\r\n", MP2760_ReadRegister16(0x26));
+    snprintf(msg, sizeof(msg), "REG26  ADC Result of the System Voltage:  0x%04X\\r\\n", MP2760_ReadRegister16(0x26));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG27  ADC Result of the Battery Charge Current:  0x%04X\r\n", MP2760_ReadRegister16(0x27));
+    snprintf(msg, sizeof(msg), "REG27  ADC Result of the Battery Charge Current:  0x%04X\\r\\n", MP2760_ReadRegister16(0x27));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG28  ADC Result of the NTC-Sense Voltage Ratio:  0x%04X\r\n", MP2760_ReadRegister16(0x28));
+    snprintf(msg, sizeof(msg), "REG28  ADC Result of the NTC-Sense Voltage Ratio:  0x%04X\\r\\n", MP2760_ReadRegister16(0x28));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG29  ADC Result of the TS-Sense Voltage Ratio:  0x%04X\r\n", MP2760_ReadRegister16(0x29));
+    snprintf(msg, sizeof(msg), "REG29  ADC Result of the TS-Sense Voltage Ratio:  0x%04X\\r\\n", MP2760_ReadRegister16(0x29));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG2A  ADC Result of the Junction Temperature:  0x%04X\r\n", MP2760_ReadRegister16(0x2A));
+    snprintf(msg, sizeof(msg), "REG2A  ADC Result of the Junction Temperature:  0x%04X\\r\\n", MP2760_ReadRegister16(0x2A));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG2B  ADC Result of the Battery Discharge Current in Source Mode:  0x%04X\r\n", MP2760_ReadRegister16(0x2B));
+    snprintf(msg, sizeof(msg), "REG2B  ADC Result of the Battery Discharge Current in Source Mode:  0x%04X\\r\\n", MP2760_ReadRegister16(0x2B));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG2C  ADC Result of the Output Voltage in Source Mode:  0x%04X\r\n", MP2760_ReadRegister16(0x2C));
+    snprintf(msg, sizeof(msg), "REG2C  ADC Result of the Output Voltage in Source Mode:  0x%04X\\r\\n", MP2760_ReadRegister16(0x2C));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "REG2D  ADC Result of the Output Current in Source Mode :  0x%04X\r\n", MP2760_ReadRegister16(0x2D));
+    snprintf(msg, sizeof(msg), "REG2D  ADC Result of the Output Current in Source Mode :  0x%04X\\r\\n", MP2760_ReadRegister16(0x2D));
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 }
 
