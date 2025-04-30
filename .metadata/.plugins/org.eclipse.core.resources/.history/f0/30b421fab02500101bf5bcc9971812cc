@@ -59,12 +59,7 @@ static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
 void MP2760_WriteRegister(uint8_t reg, uint8_t value);
 uint8_t MP2760_ReadRegister(uint8_t reg);
-float MP2760_ReadVoltage(uint8_t msb_reg);
-void MP2760_PrintStatus(void);
-void MP2760_PrintVoltages(void);
-void MP2760_PrintThresholds(void);
-void MP2760_PrintFaults(void);
-void MP2760_Dashboard(void);
+void MP2760_Live_Status(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -80,119 +75,16 @@ uint8_t MP2760_ReadRegister(uint8_t reg)
     HAL_I2C_Mem_Read(&hi2c1, MP2760_ADDR, reg, I2C_MEMADD_SIZE_8BIT, &value, 1, HAL_MAX_DELAY);
     return value;
 }
-
-float MP2760_ReadVoltage(uint8_t msb_reg)
+void MP2760_Live_Status(void)
 {
-    uint8_t msb = MP2760_ReadRegister(msb_reg);
-    uint8_t lsb = MP2760_ReadRegister(msb_reg + 1);
-    uint16_t raw = (msb << 4) | (lsb >> 4);
-    return raw * 0.00488f; // Each LSB = 4.88mV
-}
-void MP2760_PrintStatus(void)
-{
-    uint8_t input_status = MP2760_ReadRegister(0x0A);
+    char msg[128];
     uint8_t charger_status = MP2760_ReadRegister(0x0B);
-
-    char msg[128];
-    snprintf(msg, sizeof(msg),
-             "Input Status: ACOK:%d Input_Present:%d Adapter_Present:%d\r\n"
-             "Charging Status: Charging_Enable:%d Charger_State:0x%02X\r\n",
-             (input_status >> 7) & 0x01,
-             (input_status >> 5) & 0x01,
-             (input_status >> 3) & 0x01,
-             (charger_status >> 7) & 0x01,
-             charger_status & 0x7F);
-
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-}
-
-void MP2760_PrintVoltages(void)
-{
-    float vin = MP2760_ReadVoltage(0x1C);
-    float vbat = MP2760_ReadVoltage(0x1E);
-    float vsys = MP2760_ReadVoltage(0x20);
-
-    char msg[128];
-    snprintf(msg, sizeof(msg),
-             "Voltages: VIN:%.2fV VBAT:%.2fV VSYS:%.2fV\r\n",
-             vin, vbat, vsys);
-
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-}
-
-void MP2760_PrintThresholds(void)
-{
-    uint8_t vin_ovp = MP2760_ReadRegister(0x11) >> 6; // Bits 7:6
-    uint8_t vin_uvlo = (MP2760_ReadRegister(0x11) >> 4) & 0x03; // Bits 5:4
-    uint8_t sys_reg_raw = MP2760_ReadRegister(0x15);
-    uint8_t vbat_reg_raw = MP2760_ReadRegister(0x14);
-
-    float sys_reg = 3.84 + (sys_reg_raw * 0.032);
-    float vbat_reg = 3.84 + (vbat_reg_raw * 0.032);
-
-    char msg[128];
-    snprintf(msg, sizeof(msg),
-             "Thresholds:\r\nVIN_OVP Setting: %d (code)\r\nVIN_UVLO Setting: %d (code)\r\nSYS_REG: %.2fV\r\nVBAT_REG: %.2fV\r\n",
-             vin_ovp, vin_uvlo, sys_reg, vbat_reg);
-
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-}
-
-void MP2760_PrintFaults(void)
-{
     uint8_t fault_status = MP2760_ReadRegister(0x0C);
-    char msg[256];
+    uint8_t input_status = MP2760_ReadRegister(0x0A);
 
-    snprintf(msg, sizeof(msg), "Faults: 0x%02X\r\n", fault_status);
+    snprintf(msg, sizeof(msg), "\rCHG:0x%02X FLT:0x%02X INP:0x%02X", charger_status, fault_status, input_status);
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    if (fault_status == 0) {
-        snprintf(msg, sizeof(msg), "No faults detected.\r\n");
-        HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-        return;
-    }
-
-    if (fault_status & 0x10) HAL_UART_Transmit(&huart2, (uint8_t*)"Fault: Input UVLO detected!\r\n", 29, HAL_MAX_DELAY);
-    if (fault_status & 0x08) HAL_UART_Transmit(&huart2, (uint8_t*)"Fault: Battery OVP!\r\n", 21, HAL_MAX_DELAY);
-    if (fault_status & 0x04) HAL_UART_Transmit(&huart2, (uint8_t*)"Fault: Battery Short!\r\n", 23, HAL_MAX_DELAY);
-    if (fault_status & 0x02) HAL_UART_Transmit(&huart2, (uint8_t*)"Fault: Battery NTC Fault!\r\n", 26, HAL_MAX_DELAY);
-    if (fault_status & 0x40) HAL_UART_Transmit(&huart2, (uint8_t*)"Fault: Thermal Shutdown!\r\n", 26, HAL_MAX_DELAY);
 }
-
-void MP2760_PrintAdvancedPathStatus(void)
-{
-    uint8_t msb = MP2760_ReadRegister(0x17);
-    uint8_t lsb = MP2760_ReadRegister(0x18);
-    uint16_t reg17 = (msb << 8) | lsb;
-
-    char msg[256];
-    snprintf(msg, sizeof(msg), "Advanced Path Status REG17h: 0x%04X\r\n", reg17);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    if (reg17 & (1 << 13)) HAL_UART_Transmit(&huart2, (uint8_t*)"Fault: ACFET Failure Detected!\r\n", 32, HAL_MAX_DELAY);
-    if (reg17 & (1 << 12)) HAL_UART_Transmit(&huart2, (uint8_t*)"Fault: BATFET Failure Detected!\r\n", 33, HAL_MAX_DELAY);
-    if (reg17 & (1 << 9))  HAL_UART_Transmit(&huart2, (uint8_t*)"Fault: SYS LDO Failure!\r\n", 25, HAL_MAX_DELAY);
-    if (reg17 & (1 << 8))  HAL_UART_Transmit(&huart2, (uint8_t*)"Fault: VBAT Short Detected!\r\n", 28, HAL_MAX_DELAY);
-    if (reg17 & (1 << 5))  HAL_UART_Transmit(&huart2, (uint8_t*)"Fault: NTC Failure!\r\n", 22, HAL_MAX_DELAY);
-}
-
-void MP2760_Dashboard(void)
-{
-	const char* clear_screen = "\033[2J\033[H";  // ANSI: clear + move cursor to home
-	    HAL_UART_Transmit(&huart2, (uint8_t*)clear_screen, strlen(clear_screen), HAL_MAX_DELAY);
-
-    char header[] = "\r\n================ MP2760 DASHBOARD ==================\r\n";
-    HAL_UART_Transmit(&huart2, (uint8_t*)header, strlen(header), HAL_MAX_DELAY);
-
-    MP2760_PrintStatus();
-    MP2760_PrintVoltages();
-    MP2760_PrintThresholds();
-    MP2760_PrintFaults();
-    MP2760_PrintAdvancedPathStatus();
-    char footer[] = "====================================================\r\n";
-    HAL_UART_Transmit(&huart2, (uint8_t*)footer, strlen(footer), HAL_MAX_DELAY);
-}
-
 /* USER CODE END 0 */
 
 /**
@@ -235,8 +127,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	    MP2760_Dashboard();
-	    HAL_Delay(1000); // Every 1 second
+	  MP2760_Live_Status();
+	      HAL_Delay(1000); // Print every 1 second
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
