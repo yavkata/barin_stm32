@@ -381,58 +381,37 @@ void MP2760_Print_REG16(void)
     snprintf(msg, sizeof(msg), "\r\nREG16 (0x16) - Status and Fault Register 0 = 0x%04X\r\n", val);
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    // MD_STAT[1:0] (15:14)
-    uint8_t md_stat = (val >> 14) & 0x03;
-    const char* md_modes[] = {"Standby", "Operation", "Standby", "Operation"};
-    snprintf(msg, sizeof(msg), "  MD_STAT[15:14] = %d // %s\r\n", md_stat, md_modes[md_stat]);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    // PG_STAT [13]
-    snprintf(msg, sizeof(msg), "  PG_STAT[13] = %d // %s\r\n", (val >> 13) & 0x01,
-             (val & (1 << 13)) ? "VIN power good" : "VIN not power good");
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    // SWITCH_STAT[12:11]
-    uint8_t sw_mode = (val >> 11) & 0x03;
-    const char* sw_modes[] = {"Idle", "Buck", "Buck-Boost", "Boost"};
-    snprintf(msg, sizeof(msg), "  SWITCH_STAT[12:11] = %d // %s mode\r\n", sw_mode, sw_modes[sw_mode]);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    // BATT_MISS_STAT [10]
-    snprintf(msg, sizeof(msg), "  BATT_MISS_STAT[10] = %d // %s\r\n", (val >> 10) & 0x01,
-             (val & (1 << 10)) ? "Battery missing" : "Battery present");
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    // CHG_STAT[8:6]
     uint8_t chg_stat = (val >> 6) & 0x07;
-    const char* chg_phases[] = {
-        "No charging", "Trickle", "Pre-charge", "CC", "CV", "Termination", "Reserved", "Reserved"
+    const char* chg_str[] = {
+        "No charging", "Trickle", "Pre-charge", "Constant current",
+        "Constant voltage", "Termination", "Reserved", "Reserved"
     };
-    snprintf(msg, sizeof(msg), "  CHG_STAT[8:6] = %d // %s\r\n", chg_stat, chg_phases[chg_stat]);
+    snprintf(msg, sizeof(msg), "  CHG_STAT[2:0] = %d // %s\r\n", chg_stat, chg_str[chg_stat]);
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    // VIN_MIN_STAT [5]
-    snprintf(msg, sizeof(msg), "  VIN_MIN_STAT[5] = %d // %s\r\n", (val >> 5) & 0x01,
-             (val & (1 << 5)) ? "VIN limit loop active" : "VIN OK");
+    snprintf(msg, sizeof(msg), "  VIN_MIN_STAT [5] = %d // %s\r\n",
+             (val >> 5) & 0x01,
+             (val & (1 << 5)) ? "Input voltage limit active" : "Not in VIN limit");
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    // IIN_LIM_STAT [4]
-    snprintf(msg, sizeof(msg), "  IIN_LIM_STAT[4] = %d // %s\r\n", (val >> 4) & 0x01,
-             (val & (1 << 4)) ? "Input current limited" : "IIN OK");
+    snprintf(msg, sizeof(msg), "  IIN_LIM_STAT [4] = %d // %s\r\n",
+             (val >> 4) & 0x01,
+             (val & (1 << 4)) ? "Input current limit active" : "Not in IIN limit");
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    // BATFET_OC [2]
-    snprintf(msg, sizeof(msg), "  BATFET_OC[2] = %d // %s\r\n", (val >> 2) & 0x01,
+    snprintf(msg, sizeof(msg), "  BATFET_OC [2] = %d // %s\r\n",
+             (val >> 2) & 0x01,
              (val & (1 << 2)) ? "BATFET Overcurrent" : "Normal");
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    // TS_FAULT [1]
-    snprintf(msg, sizeof(msg), "  TS_FAULT[1] = %d // %s\r\n", (val >> 1) & 0x01,
-             (val & (1 << 1)) ? "TS fault (hot condition)" : "TS normal");
+    snprintf(msg, sizeof(msg), "  TS_FAULT [1] = %d // %s\r\n",
+             (val >> 1) & 0x01,
+             (val & (1 << 1)) ? "NTC Hot fault" : "NTC normal");
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
     char footer[] = "*******************************************************\r\n";
-                 HAL_UART_Transmit(&huart2, (uint8_t*)footer, strlen(footer), HAL_MAX_DELAY);
+             HAL_UART_Transmit(&huart2, (uint8_t*)footer, strlen(footer), HAL_MAX_DELAY);
 }
+
 void MP2760_Print_REG17(void)
 {
     char msg[128];
@@ -464,23 +443,16 @@ void MP2760_Print_REG17(void)
     snprintf(msg, sizeof(msg), "  VBATT_LOW [7] = %d\r\n", (val >> 7) & 0x01);
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "  WTD_EXP [6] = %d // %s\r\n", (val >> 6) & 0x01,
-             (val & (1 << 6)) ? "Watchdog expired" : "OK");
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  CHG_TMR_EXP [5] = %d\r\n", (val >> 5) & 0x01);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  THERM_SHDN [4] = %d\r\n", (val >> 4) & 0x01);
+    snprintf(msg, sizeof(msg), "  WTD_EXPIRE [6] = %d // %s\r\n", (val >> 6) & 0x01,
+             (val & (1 << 6)) ? "Watchdog expired" : "Watchdog OK");
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
     // NTC_FAULT[2:0]
     uint8_t ntc = val & 0x07;
-    const char* ntc_states[] = {
-        "Normal", "Cold", "Cool", "Warm",
-        "Hot", "Reserved", "Reserved", "Float"
+    const char* ntc_desc[] = {
+        "Normal", "Cold", "Cool", "Warm", "Hot", "Reserved", "Reserved", "Float"
     };
-    snprintf(msg, sizeof(msg), "  NTC_FAULT[2:0] = %d // %s\r\n", ntc, ntc_states[ntc]);
+    snprintf(msg, sizeof(msg), "  NTC_FAULT[2:0] = %d // %s\r\n", ntc, ntc_desc[ntc]);
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
     char footer[] = "*******************************************************\r\n";
                  HAL_UART_Transmit(&huart2, (uint8_t*)footer, strlen(footer), HAL_MAX_DELAY);
