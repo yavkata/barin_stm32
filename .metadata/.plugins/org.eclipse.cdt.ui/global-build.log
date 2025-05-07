@@ -1252,3 +1252,238 @@ Finished building: default.size.stdout
  
 Finished building: STM32L010RBT6_MP2760.list
  
+14:14:16 **** Incremental Build of configuration Debug for project STM32L010RBT6_MP2760 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L010xB -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32L010RBT6_MP2760.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/barin/Documents/barin_stm32/STM32L010RBT6_MP2760/STM32L010RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L010RBT6_MP2760.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32L010RBT6_MP2760.elf
+ 
+arm-none-eabi-size  STM32L010RBT6_MP2760.elf 
+arm-none-eabi-objdump -h -S STM32L010RBT6_MP2760.elf  > "STM32L010RBT6_MP2760.list"
+   text	   data	    bss	    dec	    hex	filename
+  45900	    468	   2124	  48492	   bd6c	STM32L010RBT6_MP2760.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32L010RBT6_MP2760.list
+ 
+14:15:42 **** Incremental Build of configuration Debug for project STM32L010RBT6_MP2760 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L010xB -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32L010RBT6_MP2760.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/barin/Documents/barin_stm32/STM32L010RBT6_MP2760/STM32L010RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L010RBT6_MP2760.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32L010RBT6_MP2760.elf
+ 
+arm-none-eabi-size  STM32L010RBT6_MP2760.elf 
+   text	   data	    bss	    dec	    hex	filename
+  45900	    468	   2124	  48492	   bd6c	STM32L010RBT6_MP2760.elf
+Finished building: default.size.stdout
+arm-none-eabi-objdump -h -S STM32L010RBT6_MP2760.elf  > "STM32L010RBT6_MP2760.list"
+ 
+Finished building: STM32L010RBT6_MP2760.list
+ 
+14:43:07 **** Incremental Build of configuration Debug for project STM32L010RBT6_MP2760 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L010xB -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'MP2760_ReadVoltage':
+../Core/Src/main.c:96:13: warning: unused variable 'lsb' [-Wunused-variable]
+   96 |     uint8_t lsb = MP2760_ReadRegister(reg + 1);
+      |             ^~~
+../Core/Src/main.c:95:13: warning: unused variable 'msb' [-Wunused-variable]
+   95 |     uint8_t msb = MP2760_ReadRegister(reg);
+      |             ^~~
+arm-none-eabi-gcc -o "STM32L010RBT6_MP2760.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/barin/Documents/barin_stm32/STM32L010RBT6_MP2760/STM32L010RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L010RBT6_MP2760.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32L010RBT6_MP2760.elf
+ 
+arm-none-eabi-size  STM32L010RBT6_MP2760.elf 
+arm-none-eabi-objdump -h -S STM32L010RBT6_MP2760.elf  > "STM32L010RBT6_MP2760.list"
+   text	   data	    bss	    dec	    hex	filename
+  45888	    468	   2124	  48480	   bd60	STM32L010RBT6_MP2760.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32L010RBT6_MP2760.list
+ 
+14:43:38 **** Incremental Build of configuration Debug for project STM32L010RBT6_MP2760 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L010xB -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32L010RBT6_MP2760.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/barin/Documents/barin_stm32/STM32L010RBT6_MP2760/STM32L010RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L010RBT6_MP2760.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32L010RBT6_MP2760.elf
+ 
+arm-none-eabi-size  STM32L010RBT6_MP2760.elf 
+arm-none-eabi-objdump -h -S STM32L010RBT6_MP2760.elf  > "STM32L010RBT6_MP2760.list"
+   text	   data	    bss	    dec	    hex	filename
+  45848	    468	   2124	  48440	   bd38	STM32L010RBT6_MP2760.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32L010RBT6_MP2760.list
+ 
+17:26:00 **** Incremental Build of configuration Debug for project STM32L010RBT6_MP2760 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L010xB -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32L010RBT6_MP2760.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/barin/Documents/barin_stm32/STM32L010RBT6_MP2760/STM32L010RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L010RBT6_MP2760.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32L010RBT6_MP2760.elf
+ 
+arm-none-eabi-size  STM32L010RBT6_MP2760.elf 
+arm-none-eabi-objdump -h -S STM32L010RBT6_MP2760.elf  > "STM32L010RBT6_MP2760.list"
+   text	   data	    bss	    dec	    hex	filename
+  41004	    468	   2124	  43596	   aa4c	STM32L010RBT6_MP2760.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32L010RBT6_MP2760.list
+ 
+17:29:22 **** Incremental Build of configuration Debug for project STM32L010RBT6_MP2760 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L010xB -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32L010RBT6_MP2760.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/barin/Documents/barin_stm32/STM32L010RBT6_MP2760/STM32L010RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L010RBT6_MP2760.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32L010RBT6_MP2760.elf
+ 
+arm-none-eabi-size  STM32L010RBT6_MP2760.elf 
+arm-none-eabi-objdump -h -S STM32L010RBT6_MP2760.elf  > "STM32L010RBT6_MP2760.list"
+   text	   data	    bss	    dec	    hex	filename
+  41876	    468	   2124	  44468	   adb4	STM32L010RBT6_MP2760.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32L010RBT6_MP2760.list
+ 
+17:48:29 **** Incremental Build of configuration Debug for project STM32L010RBT6_MP2760 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L010xB -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'MP2760_Print_REG05':
+../Core/Src/main.c:331:10: warning: unused variable 'footer' [-Wunused-variable]
+  331 |     char footer[] = "*******************************************************\r\n";
+      |          ^~~~~~
+arm-none-eabi-gcc -o "STM32L010RBT6_MP2760.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/barin/Documents/barin_stm32/STM32L010RBT6_MP2760/STM32L010RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L010RBT6_MP2760.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32L010RBT6_MP2760.elf
+ 
+arm-none-eabi-size  STM32L010RBT6_MP2760.elf 
+arm-none-eabi-objdump -h -S STM32L010RBT6_MP2760.elf  > "STM32L010RBT6_MP2760.list"
+   text	   data	    bss	    dec	    hex	filename
+  41956	    468	   2124	  44548	   ae04	STM32L010RBT6_MP2760.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32L010RBT6_MP2760.list
+ 
+17:49:44 **** Incremental Build of configuration Debug for project STM32L010RBT6_MP2760 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L010xB -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32L010RBT6_MP2760.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/barin/Documents/barin_stm32/STM32L010RBT6_MP2760/STM32L010RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L010RBT6_MP2760.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32L010RBT6_MP2760.elf
+ 
+arm-none-eabi-size  STM32L010RBT6_MP2760.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41980	    468	   2124	  44572	   ae1c	STM32L010RBT6_MP2760.elf
+arm-none-eabi-objdump -h -S STM32L010RBT6_MP2760.elf  > "STM32L010RBT6_MP2760.list"
+Finished building: default.size.stdout
+ 
+Finished building: STM32L010RBT6_MP2760.list
+ 
+17:54:07 **** Incremental Build of configuration Debug for project STM32L010RBT6_MP2760 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L010xB -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32L010RBT6_MP2760.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/barin/Documents/barin_stm32/STM32L010RBT6_MP2760/STM32L010RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L010RBT6_MP2760.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32L010RBT6_MP2760.elf
+ 
+arm-none-eabi-size  STM32L010RBT6_MP2760.elf 
+arm-none-eabi-objdump -h -S STM32L010RBT6_MP2760.elf  > "STM32L010RBT6_MP2760.list"
+   text	   data	    bss	    dec	    hex	filename
+  43332	    468	   2124	  45924	   b364	STM32L010RBT6_MP2760.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32L010RBT6_MP2760.list
+ 
+17:59:06 **** Incremental Build of configuration Debug for project STM32L010RBT6_MP2760 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L010xB -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32L010RBT6_MP2760.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/barin/Documents/barin_stm32/STM32L010RBT6_MP2760/STM32L010RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L010RBT6_MP2760.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32L010RBT6_MP2760.elf
+ 
+arm-none-eabi-size  STM32L010RBT6_MP2760.elf 
+arm-none-eabi-objdump -h -S STM32L010RBT6_MP2760.elf  > "STM32L010RBT6_MP2760.list"
+   text	   data	    bss	    dec	    hex	filename
+  43332	    468	   2124	  45924	   b364	STM32L010RBT6_MP2760.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32L010RBT6_MP2760.list
+ 
+18:02:16 **** Incremental Build of configuration Debug for project STM32L010RBT6_MP2760 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L010xB -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32L010RBT6_MP2760.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/barin/Documents/barin_stm32/STM32L010RBT6_MP2760/STM32L010RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L010RBT6_MP2760.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32L010RBT6_MP2760.elf
+ 
+arm-none-eabi-size  STM32L010RBT6_MP2760.elf 
+arm-none-eabi-objdump -h -S STM32L010RBT6_MP2760.elf  > "STM32L010RBT6_MP2760.list"
+   text	   data	    bss	    dec	    hex	filename
+  44024	    468	   2124	  46616	   b618	STM32L010RBT6_MP2760.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32L010RBT6_MP2760.list
+ 
+18:07:22 **** Incremental Build of configuration Debug for project STM32L010RBT6_MP2760 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L010xB -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32L010RBT6_MP2760.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/barin/Documents/barin_stm32/STM32L010RBT6_MP2760/STM32L010RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L010RBT6_MP2760.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32L010RBT6_MP2760.elf
+ 
+arm-none-eabi-size  STM32L010RBT6_MP2760.elf 
+arm-none-eabi-objdump -h -S STM32L010RBT6_MP2760.elf  > "STM32L010RBT6_MP2760.list"
+   text	   data	    bss	    dec	    hex	filename
+  44388	    468	   2124	  46980	   b784	STM32L010RBT6_MP2760.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32L010RBT6_MP2760.list
+ 
+18:09:28 **** Incremental Build of configuration Debug for project STM32L010RBT6_MP2760 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L010xB -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32L010RBT6_MP2760.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/barin/Documents/barin_stm32/STM32L010RBT6_MP2760/STM32L010RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L010RBT6_MP2760.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32L010RBT6_MP2760.elf
+ 
+arm-none-eabi-size  STM32L010RBT6_MP2760.elf 
+arm-none-eabi-objdump -h -S STM32L010RBT6_MP2760.elf  > "STM32L010RBT6_MP2760.list"
+   text	   data	    bss	    dec	    hex	filename
+  44388	    468	   2124	  46980	   b784	STM32L010RBT6_MP2760.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32L010RBT6_MP2760.list
+ 
+18:11:55 **** Incremental Build of configuration Debug for project STM32L010RBT6_MP2760 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L010xB -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32L010RBT6_MP2760.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/barin/Documents/barin_stm32/STM32L010RBT6_MP2760/STM32L010RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L010RBT6_MP2760.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32L010RBT6_MP2760.elf
+ 
+arm-none-eabi-size  STM32L010RBT6_MP2760.elf 
+arm-none-eabi-objdump -h -S STM32L010RBT6_MP2760.elf  > "STM32L010RBT6_MP2760.list"
+   text	   data	    bss	    dec	    hex	filename
+  45356	    468	   2124	  47948	   bb4c	STM32L010RBT6_MP2760.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32L010RBT6_MP2760.list
+ 
+18:15:29 **** Incremental Build of configuration Debug for project STM32L010RBT6_MP2760 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L010xB -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32L010RBT6_MP2760.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/barin/Documents/barin_stm32/STM32L010RBT6_MP2760/STM32L010RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L010RBT6_MP2760.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32L010RBT6_MP2760.elf
+ 
+arm-none-eabi-size  STM32L010RBT6_MP2760.elf 
+   text	   data	    bss	    dec	    hex	filename
+  46480	    468	   2124	  49072	   bfb0	STM32L010RBT6_MP2760.elf
+arm-none-eabi-objdump -h -S STM32L010RBT6_MP2760.elf  > "STM32L010RBT6_MP2760.list"
+Finished building: default.size.stdout
+ 
+Finished building: STM32L010RBT6_MP2760.list
+ 
+18:39:36 **** Incremental Build of configuration Debug for project STM32L010RBT6_MP2760 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L010xB -c -I../Core/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc -I../Drivers/STM32L0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32L010RBT6_MP2760.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/barin/Documents/barin_stm32/STM32L010RBT6_MP2760/STM32L010RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32L010RBT6_MP2760.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32L010RBT6_MP2760.elf
+ 
+arm-none-eabi-size  STM32L010RBT6_MP2760.elf 
+arm-none-eabi-objdump -h -S STM32L010RBT6_MP2760.elf  > "STM32L010RBT6_MP2760.list"
+   text	   data	    bss	    dec	    hex	filename
+  46600	    468	   2124	  49192	   c028	STM32L010RBT6_MP2760.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32L010RBT6_MP2760.list
+ 

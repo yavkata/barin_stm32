@@ -378,84 +378,87 @@ void MP2760_Print_REG16(void)
 {
     char msg[128];
     uint16_t val = MP2760_ReadRegister16(0x16);
+
     snprintf(msg, sizeof(msg), "\r\nREG16 (0x16) - Status and Fault Register 0 = 0x%04X\r\n", val);
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    uint8_t chg_stat = (val >> 6) & 0x07;
-    const char* chg_str[] = {
-        "No charging", "Trickle", "Pre-charge", "Constant current",
-        "Constant voltage", "Termination", "Reserved", "Reserved"
-    };
-    snprintf(msg, sizeof(msg), "  CHG_STAT[2:0] = %d // %s\r\n", chg_stat, chg_str[chg_stat]);
+    // CHG_STAT [7:6]
+    uint8_t chg_stat = (val >> 6) & 0x03;
+    const char* chg_stat_str = "Unknown";
+    switch (chg_stat) {
+        case 0: chg_stat_str = "Charging Done"; break;
+        case 1: chg_stat_str = "Pre-charge"; break;
+        case 2: chg_stat_str = "Fast Charging"; break;
+        case 3: chg_stat_str = "Timer Fault"; break;
+    }
+    snprintf(msg, sizeof(msg), "  CHG_STAT[1:0] [7:6] = 0x%X // %s\r\n", chg_stat, chg_stat_str);
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "  VIN_MIN_STAT [5] = %d // %s\r\n",
-             (val >> 5) & 0x01,
-             (val & (1 << 5)) ? "Input voltage limit active" : "Not in VIN limit");
+    // FLT_STAT [5:4]
+    uint8_t flt_stat = (val >> 4) & 0x03;
+    const char* flt_str = "No fault";
+    switch (flt_stat) {
+        case 1: flt_str = "NTC fault"; break;
+        case 2: flt_str = "Watchdog fault"; break;
+        case 3: flt_str = "Input OVP"; break;
+    }
+    snprintf(msg, sizeof(msg), "  FLT_STAT[1:0] [5:4] = 0x%X // %s\r\n", flt_stat, flt_str);
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "  IIN_LIM_STAT [4] = %d // %s\r\n",
-             (val >> 4) & 0x01,
-             (val & (1 << 4)) ? "Input current limit active" : "Not in IIN limit");
+    // VIN_PRESENT [3]
+    snprintf(msg, sizeof(msg), "  VIN_PRESENT [3] = %d // %s\r\n", (val >> 3) & 0x01,
+             (val & (1 << 3)) ? "VIN is present" : "VIN not detected");
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "  BATFET_OC [2] = %d // %s\r\n",
-             (val >> 2) & 0x01,
-             (val & (1 << 2)) ? "BATFET Overcurrent" : "Normal");
+    // ADAPTER_PRESENT [2]
+    snprintf(msg, sizeof(msg), "  ADAPTER_PRESENT [2] = %d // %s\r\n", (val >> 2) & 0x01,
+             (val & (1 << 2)) ? "Adapter is present" : "No adapter detected");
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  TS_FAULT [1] = %d // %s\r\n",
-             (val >> 1) & 0x01,
-             (val & (1 << 1)) ? "NTC Hot fault" : "NTC normal");
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-    char footer[] = "*******************************************************\r\n";
-             HAL_UART_Transmit(&huart2, (uint8_t*)footer, strlen(footer), HAL_MAX_DELAY);
 }
 
 void MP2760_Print_REG17(void)
 {
     char msg[128];
     uint16_t val = MP2760_ReadRegister16(0x17);
+
     snprintf(msg, sizeof(msg), "\r\nREG17 (0x17) - Status and Fault Register 1 = 0x%04X\r\n", val);
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "  VIN_SRC_OV [15] = %d\r\n", (val >> 15) & 0x01);
+    // MD_STAT[1:0] [1:0]
+    uint8_t md_stat = val & 0x03;
+    const char* md_stat_str = "Unknown";
+    switch (md_stat) {
+        case 0: md_stat_str = "Charging mode"; break;
+        case 1: md_stat_str = "Source mode"; break;
+        case 2: md_stat_str = "Idle mode"; break;
+        case 3: md_stat_str = "Ship or shutdown mode"; break;
+    }
+    snprintf(msg, sizeof(msg), "  MD_STAT[1:0] [1:0] = 0x%X // %s\r\n", md_stat, md_stat_str);
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "  VIN_SRC_UV [14] = %d\r\n", (val >> 14) & 0x01);
+    // VIN_UVLO [10]
+    uint8_t vin_uvlo = (val >> 10) & 0x01;
+    snprintf(msg, sizeof(msg), "  VIN_UVLO [10] = %d // %s\r\n", vin_uvlo,
+             vin_uvlo ? "VIN under-voltage lockout fault" : "VIN UVLO not detected");
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "  VIN_CHG_OV [13] = %d\r\n", (val >> 13) & 0x01);
+    // VIN_OVP [9]
+    uint8_t vin_ovp = (val >> 9) & 0x01;
+    snprintf(msg, sizeof(msg), "  VIN_OVP [9] = %d // %s\r\n", vin_ovp,
+             vin_ovp ? "VIN over-voltage protection triggered" : "VIN OVP not detected");
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "  VADP_OV [12] = %d\r\n", (val >> 12) & 0x01);
+    // ACFET_Fault [11]
+    uint8_t acfet_fault = (val >> 11) & 0x01;
+    snprintf(msg, sizeof(msg), "  ACFET_Fault [11] = %d // %s\r\n", acfet_fault,
+             acfet_fault ? "ACFET failed to turn on/off" : "ACFET status normal");
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 
-    snprintf(msg, sizeof(msg), "  VSYS_OV [11] = %d\r\n", (val >> 11) & 0x01);
+    // WTD_EXPIRE [12]
+    uint8_t wtd_exp = (val >> 12) & 0x01;
+    snprintf(msg, sizeof(msg), "  WTD_EXPIRE [12] = %d // %s\r\n", wtd_exp,
+             wtd_exp ? "Watchdog timer expired, back to default mode" : "Watchdog running normally");
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  VSYS_UV [10] = %d\r\n", (val >> 10) & 0x01);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  VBATT_OV [8] = %d\r\n", (val >> 8) & 0x01);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  VBATT_LOW [7] = %d\r\n", (val >> 7) & 0x01);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  WTD_EXPIRE [6] = %d // %s\r\n", (val >> 6) & 0x01,
-             (val & (1 << 6)) ? "Watchdog expired" : "Watchdog OK");
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    // NTC_FAULT[2:0]
-    uint8_t ntc = val & 0x07;
-    const char* ntc_desc[] = {
-        "Normal", "Cold", "Cool", "Warm", "Hot", "Reserved", "Reserved", "Float"
-    };
-    snprintf(msg, sizeof(msg), "  NTC_FAULT[2:0] = %d // %s\r\n", ntc, ntc_desc[ntc]);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-    char footer[] = "*******************************************************\r\n";
-                 HAL_UART_Transmit(&huart2, (uint8_t*)footer, strlen(footer), HAL_MAX_DELAY);
 }
 
 void MP2760_Dashboard(void)

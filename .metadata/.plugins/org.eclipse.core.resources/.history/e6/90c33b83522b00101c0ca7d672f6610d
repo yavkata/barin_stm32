@@ -68,10 +68,6 @@ void MP2760_PrintFaults(void);
 void MP2760_Dashboard(void);
 void MP2760_PrintAllRegisters(void);
 void MP2760_Print_REG05(void);
-void MP2760_Print_REG16(void);
-void MP2760_Print_REG23(void);
-void MP2760_Print_REG26(void);
-void MP2760_Print_REG17(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -333,130 +329,8 @@ void MP2760_Print_REG05(void)
     snprintf(msg, sizeof(msg), "  ADDR[3:0] [6:3] = 0x%X // I2C Device Address Offset\r\n", addr_bits);
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
     char footer[] = "*******************************************************\r\n";
-    HAL_UART_Transmit(&huart2, (uint8_t*)footer, strlen(footer), HAL_MAX_DELAY);
 }
 
-void MP2760_Print_REG23(void)
-{
-    char msg[128];
-    uint16_t val = MP2760_ReadRegister16(0x23);
-
-    snprintf(msg, sizeof(msg), "\r\nREG23 (0x23) - ADC Result of the Input Voltage = 0x%04X\r\n", val);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    // VIN_ADC[9:0] [9:0] — Input voltage, 20mV/LSB (typical)
-    uint16_t vin_adc = val & 0x03FF;
-    float vin_mv = (vin_adc * 20.0f)/1000;
-
-    snprintf(msg, sizeof(msg), "  VIN_ADC[9:0] [9:0] = %d // %.2f V input voltage\r\n",
-             vin_adc, vin_mv);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-    char footer[] = "*******************************************************\r\n";
-     HAL_UART_Transmit(&huart2, (uint8_t*)footer, strlen(footer), HAL_MAX_DELAY);
-}
-
-void MP2760_Print_REG26(void)
-{
-    char msg[128];
-    uint16_t val = MP2760_ReadRegister16(0x26);
-
-    snprintf(msg, sizeof(msg), "\r\nREG26 (0x26) - ADC Result of System Voltage = 0x%04X\r\n", val);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    // VSYS_ADC[9:0] — System voltage, 20 mV/LSB (typical)
-    uint16_t vsys_adc = val & 0x03FF;
-    float vsys_mv = (vsys_adc * 20.0f)/1000;
-
-    snprintf(msg, sizeof(msg), "  VSYS_ADC[9:0] [9:0] = %d // %.2f V system voltage\r\n",
-             vsys_adc, vsys_mv);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-    char footer[] = "*******************************************************\r\n";
-         HAL_UART_Transmit(&huart2, (uint8_t*)footer, strlen(footer), HAL_MAX_DELAY);
-}
-
-void MP2760_Print_REG16(void)
-{
-    char msg[128];
-    uint16_t val = MP2760_ReadRegister16(0x16);
-    snprintf(msg, sizeof(msg), "\r\nREG16 (0x16) - Status and Fault Register 0 = 0x%04X\r\n", val);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    uint8_t chg_stat = (val >> 6) & 0x07;
-    const char* chg_str[] = {
-        "No charging", "Trickle", "Pre-charge", "Constant current",
-        "Constant voltage", "Termination", "Reserved", "Reserved"
-    };
-    snprintf(msg, sizeof(msg), "  CHG_STAT[2:0] = %d // %s\r\n", chg_stat, chg_str[chg_stat]);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  VIN_MIN_STAT [5] = %d // %s\r\n",
-             (val >> 5) & 0x01,
-             (val & (1 << 5)) ? "Input voltage limit active" : "Not in VIN limit");
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  IIN_LIM_STAT [4] = %d // %s\r\n",
-             (val >> 4) & 0x01,
-             (val & (1 << 4)) ? "Input current limit active" : "Not in IIN limit");
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  BATFET_OC [2] = %d // %s\r\n",
-             (val >> 2) & 0x01,
-             (val & (1 << 2)) ? "BATFET Overcurrent" : "Normal");
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  TS_FAULT [1] = %d // %s\r\n",
-             (val >> 1) & 0x01,
-             (val & (1 << 1)) ? "NTC Hot fault" : "NTC normal");
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-    char footer[] = "*******************************************************\r\n";
-             HAL_UART_Transmit(&huart2, (uint8_t*)footer, strlen(footer), HAL_MAX_DELAY);
-}
-
-void MP2760_Print_REG17(void)
-{
-    char msg[128];
-    uint16_t val = MP2760_ReadRegister16(0x17);
-    snprintf(msg, sizeof(msg), "\r\nREG17 (0x17) - Status and Fault Register 1 = 0x%04X\r\n", val);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  VIN_SRC_OV [15] = %d\r\n", (val >> 15) & 0x01);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  VIN_SRC_UV [14] = %d\r\n", (val >> 14) & 0x01);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  VIN_CHG_OV [13] = %d\r\n", (val >> 13) & 0x01);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  VADP_OV [12] = %d\r\n", (val >> 12) & 0x01);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  VSYS_OV [11] = %d\r\n", (val >> 11) & 0x01);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  VSYS_UV [10] = %d\r\n", (val >> 10) & 0x01);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  VBATT_OV [8] = %d\r\n", (val >> 8) & 0x01);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  VBATT_LOW [7] = %d\r\n", (val >> 7) & 0x01);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    snprintf(msg, sizeof(msg), "  WTD_EXPIRE [6] = %d // %s\r\n", (val >> 6) & 0x01,
-             (val & (1 << 6)) ? "Watchdog expired" : "Watchdog OK");
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-    // NTC_FAULT[2:0]
-    uint8_t ntc = val & 0x07;
-    const char* ntc_desc[] = {
-        "Normal", "Cold", "Cool", "Warm", "Hot", "Reserved", "Reserved", "Float"
-    };
-    snprintf(msg, sizeof(msg), "  NTC_FAULT[2:0] = %d // %s\r\n", ntc, ntc_desc[ntc]);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-    char footer[] = "*******************************************************\r\n";
-                 HAL_UART_Transmit(&huart2, (uint8_t*)footer, strlen(footer), HAL_MAX_DELAY);
-}
 
 void MP2760_Dashboard(void)
 {
@@ -473,10 +347,6 @@ void MP2760_Dashboard(void)
   //  MP2760_PrintAdvancedPathStatus();
  //  MP2760_PrintAllRegisters();
     MP2760_Print_REG05();
-    MP2760_Print_REG16();
-    MP2760_Print_REG17();
-    MP2760_Print_REG23();
-    MP2760_Print_REG26();
 
     char footer[] = "====================================================\r\n";
     HAL_UART_Transmit(&huart2, (uint8_t*)footer, strlen(footer), HAL_MAX_DELAY);
